@@ -3,7 +3,7 @@ import cube
 import pygame
 import random
 
-def drawGrid(surface):
+def draw_grid(surface):
 
     global rows, width
 
@@ -16,14 +16,14 @@ def drawGrid(surface):
         pygame.draw.line(surface, (255,255,255), (x,0),(x,width))
         pygame.draw.line(surface, (255,255,255), (0,y),(width,y))
 
-def redrawWindow(surface):
+def redraw_window(surface):
 
     global rows, width, player, snack
 
     surface.fill((0,0,0))
     player.draw(surface)
     snack.draw(surface)
-    drawGrid(surface)
+    draw_grid(surface)
     pygame.display.update()
 
 def random_snack():
@@ -75,4 +75,4 @@ if __name__ ==  '__main__':
                 player.reset((10,10))
                 break
 
-        redrawWindow(window)
+        redraw_window(window)
