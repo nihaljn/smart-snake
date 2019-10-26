@@ -24,6 +24,9 @@ def redraw_window(surface):
     player.draw(surface)
     snack.draw(surface)
     draw_grid(surface)
+    font = pygame.font.Font('courier_new.ttf', 32)
+    text = font.render('Score: '+str(len(player.body) - 1), True, (255,255,255))
+    window.blit(text, (20,510))
     pygame.display.update()
 
 def random_snack():
@@ -48,12 +51,14 @@ if __name__ ==  '__main__':
 
     global width, rows, player, snack
 
+    pygame.init()
+
     width = 500
     height = 500
     rows = 20
 
     # initializes the window and returns a surface of size (width, height)
-    window = pygame.display.set_mode((width,height))
+    window = pygame.display.set_mode((width,height + 50))
 
     # instantiate the player
     player = snake.Snake((255,0,0), (10,10))
@@ -64,6 +69,10 @@ if __name__ ==  '__main__':
 
     # instantiate an object to help keep track of time
     clock = pygame.time.Clock()
+
+    font = pygame.font.Font('courier_new.ttf', 32)
+    text = font.render('Snake', True, (255,255,255))
+    window.blit(text, (20,20))
 
     while flag:
 
