@@ -31,4 +31,12 @@ class Cube(object):
         self.dirnx = dirnx
         self.dirny = dirny
         # updating the position of the cube
+        if self.dirnx == -1 and self.pos[0] <= 0: 
+            self.pos = (self.rows-1, self.pos[1])
+        elif self.dirnx == 1 and self.pos[0] >= self.rows-1: 
+            self.pos = (0,self.pos[1])
+        elif self.dirny == 1 and self.pos[1] >= self.rows-1: 
+            self.pos = (self.pos[0], 0)
+        elif self.dirny == -1 and self.pos[1] <= 0: 
+            self.pos = (self.pos[0],self.rows-1)
         self.pos = (self.pos[0] + self.dirnx, self.pos[1] + self.dirny)

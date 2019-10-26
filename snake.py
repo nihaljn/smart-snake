@@ -1,5 +1,6 @@
 import pygame
 import cube
+import random
 
 class Snake(object):
 
@@ -18,7 +19,7 @@ class Snake(object):
         self.dirnx = 0
         self.dirny = 1
 
-    def move(self):
+    def move(self, keys):
 
         # looping over all the events in the queue
         for event in pygame.event.get():
@@ -27,7 +28,8 @@ class Snake(object):
 
         # returns {key : isPressed} indicating the boolean isPressed state
         # of all keys on the keyboard
-        keys = pygame.key.get_pressed()
+        # UNCOMMENT
+        # keys = pygame.key.get_pressed()
 
         # updating turns accordingly
         # to record the turn made at that position

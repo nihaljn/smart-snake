@@ -2,6 +2,7 @@ import snake
 import cube
 import pygame
 import random
+import time
 
 def draw_grid(surface):
 
@@ -73,6 +74,10 @@ if __name__ ==  '__main__':
     font = pygame.font.Font('courier_new.ttf', 32)
     text = font.render('Snake', True, (255,255,255))
     window.blit(text, (20,20))
+    start = time.time()
+
+    currentMove = 0
+    prevMove = 0
 
     while flag:
 
@@ -82,7 +87,26 @@ if __name__ ==  '__main__':
 
         # limit the frame rate to 10fps
         clock.tick(10)
-        player.move()
+
+        # COMMENT THESE LINES TO DISABLE AUTOPLAY
+        keys = {275:False, 273:False, 274:False, 276:False}
+        diff = time.time() - start
+        if random.random() < (diff/(diff+1)):
+            prevMove = currentMove
+            currentMove = random.randrange(4) + 273
+            if prevMove == 0:
+                prevMove = currentMove
+            if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
+                currentMove = prevMove
+            if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
+                currentMove = prevMove
+            start = time.time()
+            keys[currentMove] = True
+        player.move(keys)
+        # END COMMENT
+
+        # UNCOMMENT AND MODIFY SNAKE.PY
+        # player.move()
 
         if player.body[0].pos == snack.pos:
             player.add_cube()
