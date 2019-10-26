@@ -3,7 +3,11 @@ import cube
 
 class Snake(object):
 
+    # list of Cube objects representing the body of the player
     body = []
+
+    # dictionary to store the positions at which some turn was made
+    # {position : turnDirection}
     turns = {}
 
     def __init__(self, color, pos):
@@ -25,7 +29,8 @@ class Snake(object):
         # of all keys on the keyboard
         keys = pygame.key.get_pressed()
 
-        # updating the state of player accordingly
+        # updating turns accordingly
+        # to record the turn made at that position
         if keys[pygame.K_LEFT]:
             self.dirnx = -1
             self.dirny = 0
