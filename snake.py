@@ -3,7 +3,11 @@ import cube
 
 class Snake(object):
 
+    # list of Cube objects representing the body of the player
     body = []
+
+    # dictionary to store the positions at which some turn was made
+    # {position : turnDirection}
     turns = {}
 
     def __init__(self, color, pos):
@@ -16,53 +20,62 @@ class Snake(object):
 
     def move(self):
 
+        # looping over all the events in the queue
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
 
+        # returns {key : isPressed} indicating the boolean isPressed state
+        # of all keys on the keyboard
         keys = pygame.key.get_pressed()
 
-        for key in keys:
+        # updating turns accordingly
+        # to record the turn made at that position
+        if keys[pygame.K_LEFT]:
+            self.dirnx = -1
+            self.dirny = 0
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        elif keys[pygame.K_RIGHT]:
+            self.dirnx = 1
+            self.dirny = 0
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        elif keys[pygame.K_UP]:
+            self.dirnx = 0
+            self.dirny = -1
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        elif keys[pygame.K_DOWN]:
+            self.dirnx = 0
+            self.dirny = 1
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-            if keys[pygame.K_LEFT]:
-                self.dirnx = -1
-                self.dirny = 0
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
-
-            elif keys[pygame.K_RIGHT]:
-                self.dirnx = 1
-                self.dirny = 0
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
-
-            elif keys[pygame.K_UP]:
-                self.dirnx = 0
-                self.dirny = -1
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        for i, cube in enumerate(self.body):
             
-            elif keys[pygame.K_DOWN]:
-                self.dirnx = 0
-                self.dirny = 1
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+            currentPos = cube.pos[:]
 
-        for i, c in enumerate(self.body):
+            if currentPos in self.turns:
+                # currentPos is unhandled
+                turn = self.turns[currentPos]
 
-            p = c.pos[:]
-            if p in self.turns:
-                turn = self.turns[p]
-                c.move(turn[0],turn[1])
+                # handling currentPos
+                cube.move(turn[0],turn[1])
+
                 if i == len(self.body)-1:
-                    self.turns.pop(p)
+                    # all the cubes have gone through this turn
+                    self.turns.pop(currentPos)
             else:
-                if c.dirnx == -1 and c.pos[0] <= 0: 
-                    c.pos = (c.rows-1, c.pos[1])
-                elif c.dirnx == 1 and c.pos[0] >= c.rows-1: 
-                    c.pos = (0,c.pos[1])
-                elif c.dirny == 1 and c.pos[1] >= c.rows-1: 
-                    c.pos = (c.pos[0], 0)
-                elif c.dirny == -1 and c.pos[1] <= 0: 
-                    c.pos = (c.pos[0],c.rows-1)
-                else: 
-                    c.move(c.dirnx,c.dirny)
+                # checking for fold conditions 
+                # updating position accordingly
+                if cube.dirnx == -1 and cube.pos[0] <= 0: 
+                    cube.pos = (cube.rows-1, cube.pos[1])
+                elif cube.dirnx == 1 and cube.pos[0] >= cube.rows-1: 
+                    cube.pos = (0,cube.pos[1])
+                elif cube.dirny == 1 and cube.pos[1] >= cube.rows-1: 
+                    cube.pos = (cube.pos[0], 0)
+                elif cube.dirny == -1 and cube.pos[1] <= 0: 
+                    cube.pos = (cube.pos[0],cube.rows-1)
+                else:
+                    # move the cube without updating directions
+                    cube.move(cube.dirnx,cube.dirny)
     
     def add_cube(self):
 
