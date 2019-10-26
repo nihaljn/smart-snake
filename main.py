@@ -52,22 +52,30 @@ if __name__ ==  '__main__':
     height = 500
     rows = 20
 
+    # initializes the window and returns a surface of size (width, height)
     window = pygame.display.set_mode((width,height))
+
+    # instantiate the player
     player = snake.Snake((255,0,0), (10,10))
-    snack = cube.Cube(random_snack(), color = (0,255,0))
+
+    # placing a snack cube at a random position
+    snack = cube.Cube(random_snack(), color = (128,0,128))
     flag = True
 
+    # instantiate an object to help keep track of time
     clock = pygame.time.Clock()
 
     while flag:
 
+        # pause the game for 50ms amount of time
+        # to let the video display update
         pygame.time.delay(50)
         clock.tick(10)
         player.move()
 
         if player.body[0].pos == snack.pos:
             player.add_cube()
-            snack = cube.Cube(random_snack(), color = (0,255,0))
+            snack = cube.Cube(random_snack(), color = (128,0,128))
         
         for x in range(len(player.body)):
             if player.body[x].pos in list(map(lambda z:z.pos,player.body[x+1:])):
