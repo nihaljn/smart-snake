@@ -70,6 +70,8 @@ if __name__ ==  '__main__':
         # pause the game for 50ms amount of time
         # to let the video display update
         pygame.time.delay(50)
+
+        # limit the frame rate to 10fps
         clock.tick(10)
         player.move()
 
