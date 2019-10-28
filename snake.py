@@ -19,33 +19,23 @@ class Snake(object):
         self.dirnx = 0
         self.dirny = 1
 
-    def move(self, keys):
-
-        # looping over all the events in the queue
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-
-        # returns {key : isPressed} indicating the boolean isPressed state
-        # of all keys on the keyboard
-        # UNCOMMENT
-        # keys = pygame.key.get_pressed()
+    def move(self, keys = {}):
 
         # updating turns accordingly
         # to record the turn made at that position
-        if keys[pygame.K_LEFT]:
+        if keys == pygame.K_LEFT:
             self.dirnx = -1
             self.dirny = 0
             self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
-        elif keys[pygame.K_RIGHT]:
+        elif keys == pygame.K_RIGHT:
             self.dirnx = 1
             self.dirny = 0
             self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
-        elif keys[pygame.K_UP]:
+        elif keys == pygame.K_UP:
             self.dirnx = 0
             self.dirny = -1
             self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
-        elif keys[pygame.K_DOWN]:
+        elif keys == pygame.K_DOWN:
             self.dirnx = 0
             self.dirny = 1
             self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]

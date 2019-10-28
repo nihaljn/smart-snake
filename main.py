@@ -88,25 +88,38 @@ if __name__ ==  '__main__':
         # limit the frame rate to 10fps
         clock.tick(10)
 
-        # COMMENT THESE LINES TO DISABLE AUTOPLAY
-        keys = {275:False, 273:False, 274:False, 276:False}
+        # looping over all the events in the queue
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+
+        # returns {key : isPressed} indicating the boolean isPressed state
+        # of all keys on the keyboard
+        # UNCOMMENT TO DISABLE AUTOPLAY
+        # keyPressed = pygame.key.get_pressed()
+        # END UNCOMMENT
+
+        # COMMENT TO DISABLE AUTOPLAY
+        keyPressed = {275:False, 273:False, 274:False, 276:False}
         diff = time.time() - start
         if random.random() < (diff/(diff+1)):
-            prevMove = currentMove
-            currentMove = random.randrange(4) + 273
-            if prevMove == 0:
-                prevMove = currentMove
-            if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
-                currentMove = prevMove
-            if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
-                currentMove = prevMove
+            now = random.randrange(4) + 273
             start = time.time()
-            keys[currentMove] = True
-        player.move(keys)
+            keyPressed[now] = True
         # END COMMENT
 
-        # UNCOMMENT AND MODIFY SNAKE.PY
-        # player.move()
+        for key in (pygame.K_LEFT,pygame.K_RIGHT,pygame.K_DOWN,pygame.K_UP):
+            if keyPressed[key]:
+                prevMove = currentMove
+                currentMove = key
+                if prevMove == 0:
+                    prevMove = currentMove
+                if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
+                    currentMove = prevMove
+                if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
+                    currentMove = prevMove
+                break
+        player.move(currentMove)
 
         if player.body[0].pos == snack.pos:
             player.add_cube()
