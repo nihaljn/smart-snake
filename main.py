@@ -47,7 +47,6 @@ def random_snack():
             break
     return (x,y)
 
-
 if __name__ ==  '__main__':
 
     global width, rows, player, snack
@@ -65,7 +64,8 @@ if __name__ ==  '__main__':
     player = snake.Snake((255,0,0), (10,10))
 
     # placing a snack cube at a random position
-    snack = cube.Cube(random_snack(), color = (128,0,128))
+    snackPosition = random_snack()
+    snack = cube.Cube(snackPosition, color = (128,0,128))
     flag = True
 
     # instantiate an object to help keep track of time
@@ -86,7 +86,7 @@ if __name__ ==  '__main__':
         pygame.time.delay(50)
 
         # limit the frame rate to 10fps
-        clock.tick(10)
+        clock.tick(20)
 
         # looping over all the events in the queue
         for event in pygame.event.get():
@@ -123,7 +123,8 @@ if __name__ ==  '__main__':
 
         if player.body[0].pos == snack.pos:
             player.add_cube()
-            snack = cube.Cube(random_snack(), color = (128,0,128))
+            snackPosition = random_snack()
+            snack = cube.Cube(snackPosition, color = (128,0,128))
         
         for x in range(len(player.body)):
             if player.body[x].pos in list(map(lambda z:z.pos,player.body[x+1:])):
