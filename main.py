@@ -3,6 +3,7 @@ import cube
 import pygame
 import random
 import time
+from nn import Brain
 
 def draw_grid(surface):
 
@@ -46,6 +47,28 @@ def random_snack():
         else:
             break
     return (x,y)
+
+def translate(moves, prev_move):
+    '''
+    Translates relative moves to absolute moves sequence
+    Attributes:
+        moves: relative moves [left, straight, right]
+    '''
+    move_map = {
+        275: 0,
+        273: 2,
+        274: 1,
+        276: 3
+    }
+    move_inv = [275, 274, 273, 276]
+    curr = move_map[prev_move]
+    change = [1, 0, -1]
+    for i, c in enumerate(change):
+        curr += c + 4
+        curr %= 4
+        if moves[i]:
+            return move_inv[curr]
+        
 
 if __name__ ==  '__main__':
 
@@ -98,7 +121,12 @@ if __name__ ==  '__main__':
         # UNCOMMENT TO DISABLE AUTOPLAY
         # keyPressed = pygame.key.get_pressed()
         # END UNCOMMENT
-
+        '''
+        275: LEFT
+        273: RIGHT
+        274: DOWN
+        276: UP
+        '''
         # COMMENT TO DISABLE AUTOPLAY
         keyPressed = {275:False, 273:False, 274:False, 276:False}
         diff = time.time() - start
