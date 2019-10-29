@@ -69,6 +69,73 @@ def translate(moves, prev_move):
         if moves[i]:
             return move_inv[curr]
         
+def is_dir_safe(pos, dir, steps):
+
+    '''
+    Checks whether the specified number of steps along dir would cause any damage. The directions are as described below:
+      _______ [0]
+     |
+     |
+     |
+     [1]
+    left  : (-1, 0)
+    right : (1, 0)
+    up    : (0, -1)
+    down  : (0, 1)
+
+    Arguments:
+        pos: The current position of head of player
+        dir: The absolute direction in which the player wishes to move
+        steps: The number of steps the player wishes to take along specified direction
+
+    Returns:
+        True if the move described would not cause any damage, else returns False
+    '''
+
+    global width, rows, player
+
+    destX = (pos[0] + (steps*dir[0])) % rows
+    destY = (pos[1] + (steps*dir[1])) % rows
+
+    positions = []
+    for c in player.body:
+        positions.append(c.pos)
+
+    if (destX, destY) in positions:
+        return False
+    return True
+
+def sense_percepts():
+    
+    '''
+    Returns current percepts from the state of the game.
+    percepts = [
+                <player_x>, 
+                <player_y>,
+                <snack_x>,
+                <snack_y>,
+                <is_down_safe>, <is_up_safe>, 
+                <is_right_safe>, <is_left_safe>, 
+                ]
+    Directions are absolute.
+    '''
+
+    global player, snack
+    
+    percepts = []
+
+    percepts.append(player.body[0].pos[0])
+    percepts.append(player.body[0].pos[1])
+    percepts.append(snack.pos[0])
+    percepts.append(snack.pos[1])
+
+    for dir in ((0,1),(0,-1),(1,0),(-1,0)):
+        if is_dir_safe(player.body[0].pos, dir, 1):
+            percepts.append(1)
+        else:
+            percepts.append(0)
+    
+    return percepts
 
 if __name__ ==  '__main__':
 
@@ -109,7 +176,7 @@ if __name__ ==  '__main__':
         pygame.time.delay(50)
 
         # limit the frame rate to 10fps
-        clock.tick(30)
+        clock.tick(10)
 
         # looping over all the events in the queue
         for event in pygame.event.get():
@@ -159,5 +226,5 @@ if __name__ ==  '__main__':
                 print('Score: ', len(player.body))
                 player.reset((10,10))
                 break
-
+        
         redraw_window(window)
