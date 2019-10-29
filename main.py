@@ -86,7 +86,7 @@ if __name__ ==  '__main__':
         pygame.time.delay(50)
 
         # limit the frame rate to 10fps
-        clock.tick(20)
+        clock.tick(30)
 
         # looping over all the events in the queue
         for event in pygame.event.get():
@@ -96,16 +96,16 @@ if __name__ ==  '__main__':
         # returns {key : isPressed} indicating the boolean isPressed state
         # of all keys on the keyboard
         # UNCOMMENT TO DISABLE AUTOPLAY
-        # keyPressed = pygame.key.get_pressed()
+        keyPressed = pygame.key.get_pressed()
         # END UNCOMMENT
 
         # COMMENT TO DISABLE AUTOPLAY
-        keyPressed = {275:False, 273:False, 274:False, 276:False}
-        diff = time.time() - start
-        if random.random() < (diff/(diff+1)):
-            now = random.randrange(4) + 273
-            start = time.time()
-            keyPressed[now] = True
+        # keyPressed = {275:False, 273:False, 274:False, 276:False}
+        # diff = time.time() - start
+        # if random.random() < (diff/(diff+1)):
+        #     now = random.randrange(4) + 273
+        #     start = time.time()
+        #     keyPressed[now] = True
         # END COMMENT
 
         for key in (pygame.K_LEFT,pygame.K_RIGHT,pygame.K_DOWN,pygame.K_UP):
