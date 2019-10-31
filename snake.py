@@ -4,20 +4,20 @@ import random
 
 class Snake(object):
 
-    # list of Cube objects representing the body of the player
-    body = []
-
-    # dictionary to store the positions at which some turn was made
-    # {position : turnDirection}
-    turns = {}
-
     def __init__(self, color, pos):
 
         self.color = color
         self.head = cube.Cube(pos)
-        self.body.append(self.head)
         self.dirnx = 0
         self.dirny = 1
+
+        # list of Cube objects representing the body of the player
+        self.body = []
+        self.body.append(self.head)
+
+        # dictionary to store the positions at which some turn was made
+        # {position : turnDirection}
+        self.turns = {}
 
     def move(self, keys = {}):
 
