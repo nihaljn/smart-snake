@@ -4,6 +4,7 @@ import pygame
 import random
 import time
 from nn import Brain
+import numpy as np
 
 class Game(object):
 
@@ -49,7 +50,7 @@ class Game(object):
         pygame.display.update()
 
     def random_snack(self):
-
+        random.seed(a=0)
         positions = self.player.body
         while True:
             x = random.randrange(self.rows)
@@ -63,26 +64,10 @@ class Game(object):
                 break
         return (x,y)
 
-    def translate(self, moves, prev_move):
-        '''
-        Translates relative moves to absolute moves sequence
-        Attributes:
-            moves: relative moves [left, straight, right]
-        '''
-        move_map = {
-            275: 0,
-            273: 2,
-            274: 1,
-            276: 3
-        }
-        move_inv = [275, 274, 273, 276]
-        curr = move_map[prev_move]
-        change = [1, 0, -1]
-        for i, c in enumerate(change):
-            curr += c + 4
-            curr %= 4
-            if moves[i]:
-                return move_inv[curr]
+    def hits_wall(self, pos):
+        if pos[0] <= 0 or pos[1] <= 0 or pos[0] >= self.rows-1 or pos[1] >= self.rows-1:
+            return True
+        return False
             
     def is_dir_safe(self, pos, dir, steps):
 
@@ -114,39 +99,44 @@ class Game(object):
         for c in self.player.body:
             positions.append(c.pos)
 
-        if (destX, destY) in positions:
+        if (destX, destY) in positions or self.hits_wall((destX, destY)):
             return False
         return True
 
     def sense_percepts(self):
-        
         '''
-        Returns current percepts from the state of the game.
-        percepts = [
-                    <player_x>, 
-                    <player_y>,
-                    <snack_x>,
-                    <snack_y>,
-                    <is_down_safe>, <is_up_safe>, 
-                    <is_right_safe>, <is_left_safe>, 
-                    ]
-        Directions are absolute.
+        Retrieves percept from all 8 directions
         '''
-        
-        percepts = []
-
-        percepts.append(self.player.body[0].pos[0])
-        percepts.append(self.player.body[0].pos[1])
-        percepts.append(self.snack.pos[0])
-        percepts.append(self.snack.pos[1])
-
-        for dir in ((0,1),(0,-1),(1,0),(-1,0)):
-            if self.is_dir_safe(self.player.body[0].pos, dir, 1):
-                percepts.append(1)
-            else:
-                percepts.append(0)
-        
-        return percepts
+        dx = [-1, -1, -1, 0, 1, 1, 1, 0]
+        dy = [-1, 0, 1, 1, 1, 0, -1, -1]
+        # Food
+        dirf = np.zeros(8)
+        # Tail
+        dirt = np.zeros(8)
+        # Wall
+        dirw = np.zeros(8)
+        x, y = self.player.body[0].pos
+        body_pos = []
+        for b in self.player.body:
+            body_pos.append(b.pos)
+        for i in range(8):
+            nx = x
+            ny = y
+            distance = 1
+            # Look in that direction until hit by wall
+            while not self.hits_wall((nx, ny)):
+                if (nx, ny) == self.snack.pos:
+                    # Found food in direction 'i'
+                    dirf[i] = 1
+                nx += dx[i]
+                ny += dy[i]
+                if (nx, ny) in body_pos:
+                    # Found tail in this direction
+                    dirt[i] = 1 / distance
+                distance += 1
+            dirw[i] = 1 / distance
+        percept = np.concatenate([dirf, dirt, dirw])
+        return percept
 
     def reset(self):
 
@@ -155,7 +145,7 @@ class Game(object):
         self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
         self.clock = pygame.time.Clock()
 
-    def play(self):
+    def play(self, brain=None):
 
         '''
         Plays the game using self's player and snack.
@@ -166,7 +156,7 @@ class Game(object):
         currentMove = 0
         prevMove = 0
         mrk = 0
-
+        cnt_moves = 0
         while flag:
 
             # pause the game for 50ms amount of time
@@ -174,7 +164,7 @@ class Game(object):
             pygame.time.delay(50)
 
             # limit the frame rate to 10fps
-            self.clock.tick(10)
+            self.clock.tick(30)
 
             # looping over all the events in the queue
             for event in pygame.event.get():
@@ -184,7 +174,7 @@ class Game(object):
             # returns {key : isPressed} indicating the boolean isPressed state
             # of all keys on the keyboard
             # COMMENT TO DISABLE AUTOPLAY
-            keyPressed = pygame.key.get_pressed()
+            # keyPressed = pygame.key.get_pressed()
             # END UNCOMMENT
             '''
             275: LEFT
@@ -200,7 +190,19 @@ class Game(object):
             #     start = time.time()
             #     keyPressed[now] = True
             # END COMMENT
-
+            
+            if brain:
+                # Gameplay by Neural Net
+                keys = [275, 273, 274, 276]
+                percept = self.sense_percepts()
+                moves = brain.move(percept)
+                keyPressed = {}
+                for i, key in enumerate(keys):
+                    keyPressed[key] = moves[i]
+            else:
+                # Human player
+                keyPressed = pygame.key.get_pressed()
+            
             for key in (pygame.K_LEFT,pygame.K_RIGHT,pygame.K_DOWN,pygame.K_UP):
                 if keyPressed[key]:
                     prevMove = currentMove
@@ -219,14 +221,19 @@ class Game(object):
                 self.player.add_cube()
                 self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
 
+            # Exit if hits the wall
+            if self.hits_wall(self.player.body[0].pos):
+                return len(self.player.body), cnt_moves
+            
             for x in range(len(self.player.body)):
-                if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])):
+                if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or cnt_moves > 600:
                     print('Score: ', len(self.player.body))
                     self.reset()
                     self.redraw_window()
-                    return
+                    return len(self.player.body), cnt_moves
 
             self.redraw_window()
+            cnt_moves += 1
 
 if __name__ == '__main__':
 

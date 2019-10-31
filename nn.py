@@ -3,23 +3,28 @@ import math
 
 class Brain:
 
-	def __init__(self, nn_config, activation='sigmoid'):
+	def __init__(self, nn_config, activation='sigmoid', hidden_layers=None):
 		'''
 		Initializes the brain of the snake
-		3 output nodes: left, straight, right
+		4 output nodes: left, right, down, up
 		Attributes:
 			nn_config: describes the neural network configuration of hidden nodes
 				example: nn_config = [10, 3, 4] will create 2 hidden layers with 3 and 4 hidden nodes respectively and input layer has 10 input nodes.
+			hidden_layers: optional. used to specify determined params instead of random initializations
 			activation: Activation function used
 				available: 'sigmoid', 'relu'
 		'''
+		self.nn_config = nn_config
+		if hidden_layers:
+			self.hidden_layers = hidden_layers
+			return
 		hidden_layers = []
 		l = len(nn_config)
 		for i in range(1, l):
 			layer = Layer(nn_config[i-1], nn_config[i], activation=activation)
 			hidden_layers.append(layer)
-		# 3 output nodes
-		layer = Layer(nn_config[l-1], 3, True)
+		# 4 output nodes
+		layer = Layer(nn_config[l-1], 4, True)
 		hidden_layers.append(layer)
 		self.hidden_layers = hidden_layers
 	
@@ -30,6 +35,9 @@ class Brain:
 			percept: row vector of percept. dim: 1 * nx
 		'''
 		percept = np.array(percept).reshape(-1)
+		l = percept.shape[0]
+		if l != self.nn_config[0]:
+			raise ValueError('Invalid percept length')
 		# 1 for bias term
 		percept = np.append(percept, 1)
 		percept = percept.reshape(-1, 1).T
@@ -40,13 +48,24 @@ class Brain:
 		feed = feed.reshape(-1)
 		mx = np.max(feed)
 		# Return which move to take relative to the snake
-		moves = np.zeros(3)
+		moves = np.zeros(4)
 		for i, f in enumerate(feed):
 			if f == mx:
 				moves[i] = 1
 				break
 		return moves
 	
+	def clone(self):
+		'''
+		Returns a clone of the brain.
+		'''
+		new_layers = []
+		for layer in self.hidden_layers:
+			new_layer = layer.clone()
+			new_layers.append(new_layer)
+		b = Brain(self.nn_config, hidden_layers=new_layers)
+		return b
+
 	def mutate(self, prob):
 		'''
 		Perfrom mutation on all layers
@@ -56,6 +75,23 @@ class Brain:
 		for layer in self.hidden_layers:
 			layer.mutate(prob)
 
+	def cross_over(self, partner):
+		'''
+		Performs genetic crossover operation on this chromosome with partner chromosome.
+		Attributes:
+			partner: Brain of the partner snake
+		Note: nn_config of partner must be same as 'this' brain
+		'''
+		if self.nn_config != partner.nn_config:
+			raise ValueError('Brains incompatible for crossover. nn_config must be same')
+		
+		new_hidden_layers = []
+		for i, layer in enumerate(self.hidden_layers):
+			new_layer = layer.cross_over(partner.hidden_layers[i])
+			new_hidden_layers.append(new_layer)
+		# Child brain after crossover
+		b = Brain(self.nn_config, hidden_layers=new_hidden_layers)
+		return b
 
 class Layer:
 
@@ -67,10 +103,11 @@ class Layer:
 			ny: number of columns
 			is_output: determines output layer or not
 		'''
+		# plus 1 for bias
+		nx += 1
 		self.nx = nx
 		self.ny = ny
-		# plus 1 for bias
-		mat = np.random.normal(size=(nx+1, ny))
+		mat = np.random.normal(size=(nx, ny))
 		self.mat = mat
 		self.is_output = is_output
 		self.activation = self.sigmoid
@@ -83,7 +120,7 @@ class Layer:
 		Attributes:
 			vec: input vector
 		'''
-		vec = vec.reshape(-1, 1).T
+		vec = vec.reshape(1, -1)
 		output = np.dot(vec, self.mat)
 		if self.is_output:
 			output = self.softmax(output)
@@ -94,15 +131,44 @@ class Layer:
 			output = np.append(output, 1)
 		return output
 
+	def clone(self):
+		'''
+		Returns a clone of the current layer
+		'''
+		layer = Layer(self.nx-1, self.ny, self.is_output, self.activation)
+		for i in range(self.nx):
+			for j in range(self.ny):
+				layer.mat[i][j] = self.mat[i][j]
+		return layer
+
 	def mutate(self, prob):
 		'''
 		Perform mutation on weight matrix
 		'''
-		for i in range(self.nx+1):
+		for i in range(self.nx):
 			for j in range(self.ny):
 				chance = float(np.random.random(1))
 				if chance <= prob:
 					self.mat[i][j] += float(np.random.randn(1) / 5)
+				# Bounding weights in [-1, 1]
+				# self.mat[i][j] = min(1, self.mat[i][j])
+				# self.mat[i][j] = max(-1, self.mat[i][j])
+
+	def cross_over(self, layer):
+		'''
+		Performs crossover on the 'this' layer with layer
+		Attributes:
+			layer: partner layer
+			prob: crossover rate
+		'''
+		new_layer = self.clone()
+		x = np.random.randint(0, self.nx)
+		y = np.random.randint(0, self.ny)
+		for i in range(self.nx):
+			for j in range(self.ny):
+				if i * self.ny + j > x * self.ny + y:
+					new_layer.mat[i][j] = layer.mat[i][j]
+		return new_layer
 
 	def sigmoid(self, x):
 		'''
