@@ -3,14 +3,12 @@ import cube
 import pygame
 import random
 import time
-import importlib
 from nn import Brain
 
 class Game(object):
 
     def __init__(self):
         
-        # importlib.reload(pygame)
         pygame.init()
         
         self.width = 500
@@ -150,6 +148,13 @@ class Game(object):
         
         return percepts
 
+    def reset(self):
+
+        self.window = pygame.display.set_mode((self.width,self.height + 50))
+        self.player.reset((10,10))
+        self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
+        self.clock = pygame.time.Clock()
+
     def play(self):
 
         '''
@@ -160,6 +165,7 @@ class Game(object):
         start = time.time()
         currentMove = 0
         prevMove = 0
+        mrk = 0
 
         while flag:
 
@@ -206,6 +212,7 @@ class Game(object):
                     if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
                         currentMove = prevMove
                     break
+
             self.player.move(currentMove)
 
             if self.player.body[0].pos == self.snack.pos:
@@ -213,12 +220,15 @@ class Game(object):
                 self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
 
             for x in range(len(self.player.body)):
-                if self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or len(self.player.body) == 3:
+                if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])):
                     print('Score: ', len(self.player.body))
-                    self.player.reset((10,10))
-                    flag = False
-                    del self.player
-                    pygame.quit()
+                    self.reset()
+                    self.redraw_window()
                     return
-            
+
             self.redraw_window()
+
+if __name__ == '__main__':
+
+    game = Game()
+    game.play()
