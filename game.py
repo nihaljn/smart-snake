@@ -159,8 +159,9 @@ class Game(object):
         prevMove = 0
         mrk = 0
         cnt_moves = 0
+        lifetime = 0
         while flag:
-
+            lifetime += 1
             # pause the game for 50ms amount of time
             # to let the video display update
             pygame.time.delay(50)
@@ -212,9 +213,9 @@ class Game(object):
                     if prevMove == 0:
                         prevMove = currentMove
                     if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
-                        return len(self.player.body), cnt_moves
+                        return len(self.player.body), lifetime
                     if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
-                        return len(self.player.body), cnt_moves
+                        return len(self.player.body), lifetime
                     break
 
             self.player.move(currentMove)
@@ -226,13 +227,13 @@ class Game(object):
 
             # Exit if hits the wall
             if self.hits_wall(self.player.body[0].pos):
-                return len(self.player.body), cnt_moves
+                return len(self.player.body), lifetime
             
             for x in range(len(self.player.body)):
                 if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or cnt_moves > 300:
                     self.reset()
                     self.redraw_window()
-                    return len(self.player.body), cnt_moves
+                    return len(self.player.body), lifetime
 
             self.redraw_window()
             cnt_moves += 1

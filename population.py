@@ -135,9 +135,8 @@ class Snake:
 
 if __name__ == '__main__':
 	population = Population(100)
-	# with open('pop1.pickle', 'rb') as f:
-	# 	population = pickle.load(f)
-	for i in range(50):
+	population.load('poprp')
+	for i in range(10):
 		print('Generation: ', i+1)
 		population.natural_selection()
-	population.save('poprp')
+	population.save('poprp2')
