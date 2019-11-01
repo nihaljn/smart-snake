@@ -12,14 +12,17 @@ class Game(object):
         
         pygame.init()
         
-        self.width = 500
-        self.height = 500
-        self.rows = 20
+        self.width = 1000
+        self.height = 1000
+        self.rows = 50
 
         # initializes the window and returns a surface of size (width, height)
         self.window = pygame.display.set_mode((self.width,self.height + 50))
+        # Initialize player at a random position
+        x = np.random.randint(1, self.rows)
+        y = np.random.randint(1, self.rows)
         # instantiate the player
-        self.player = snake.Snake((255,0,0), (10,10))
+        self.player = snake.Snake((255,0,0), (x, y))
         # placing a snack cube at a random position
         self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
         # instantiate an object to help keep track of time
@@ -38,19 +41,16 @@ class Game(object):
 
     def redraw_window(self):
 
-        global rows, width, player, snack
-
         self.window.fill((0,0,0))
         self.player.draw(self.window)
         self.snack.draw(self.window)
-        self.draw_grid()
+        # self.draw_grid()
         font = pygame.font.Font('courier_new.ttf', 32)
         text = font.render('Score: '+str(len(self.player.body) - 1), True, (255,255,255))
         self.window.blit(text, (20,510))
         pygame.display.update()
 
     def random_snack(self):
-        random.seed(a=0)
         positions = self.player.body
         while True:
             x = random.randrange(self.rows)
@@ -58,7 +58,7 @@ class Game(object):
 
             # ensuring the snack does not occur
             # along the body of snake
-            if len(list(filter(lambda z:z.pos == (x,y), positions))) > 0:
+            if len(list(filter(lambda z:z.pos == (x,y), positions))) > 0 or self.hits_wall((x, y)):
                 continue
             else:
                 break
@@ -122,7 +122,7 @@ class Game(object):
         for i in range(8):
             nx = x
             ny = y
-            distance = 1
+            distance = 0
             # Look in that direction until hit by wall
             while not self.hits_wall((nx, ny)):
                 if (nx, ny) == self.snack.pos:
@@ -130,10 +130,10 @@ class Game(object):
                     dirf[i] = 1
                 nx += dx[i]
                 ny += dy[i]
-                if (nx, ny) in body_pos:
+                distance += 1
+                if (nx, ny) in body_pos and dirt[i] == 0:
                     # Found tail in this direction
                     dirt[i] = 1 / distance
-                distance += 1
             dirw[i] = 1 / distance
         percept = np.concatenate([dirf, dirt, dirw])
         return percept
@@ -141,7 +141,9 @@ class Game(object):
     def reset(self):
 
         self.window = pygame.display.set_mode((self.width,self.height + 50))
-        self.player.reset((10,10))
+        x = np.random.randint(1, self.rows)
+        y = np.random.randint(1, self.rows)
+        self.player.reset((x, y))
         self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
         self.clock = pygame.time.Clock()
 
@@ -150,7 +152,8 @@ class Game(object):
         '''
         Plays the game using self's player and snack.
         '''
-
+        self.player.add_cube()
+        self.player.add_cube()
         flag = True
         start = time.time()
         currentMove = 0
@@ -210,9 +213,9 @@ class Game(object):
                     if prevMove == 0:
                         prevMove = currentMove
                     if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
-                        currentMove = prevMove
+                        return len(self.player.body), cnt_moves
                     if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
-                        currentMove = prevMove
+                        return len(self.player.body), cnt_moves
                     break
 
             self.player.move(currentMove)
@@ -220,14 +223,14 @@ class Game(object):
             if self.player.body[0].pos == self.snack.pos:
                 self.player.add_cube()
                 self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
+                cnt_moves = 0
 
             # Exit if hits the wall
             if self.hits_wall(self.player.body[0].pos):
                 return len(self.player.body), cnt_moves
             
             for x in range(len(self.player.body)):
-                if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or cnt_moves > 600:
-                    print('Score: ', len(self.player.body))
+                if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or cnt_moves > 300:
                     self.reset()
                     self.redraw_window()
                     return len(self.player.body), cnt_moves

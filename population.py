@@ -1,12 +1,14 @@
 from nn import Brain
 from game import Game
 import math
+import numpy as np
+import pickle
 
-nn_config = [24, 16, 8]
-mutation_rate = 0.1
+nn_config = [24, 16]
+mutation_rate = 0.01
 
 class Population:
-
+	
 	def __init__(self, population_size):
 		'''
 		Creates a population of snakes
@@ -15,6 +17,8 @@ class Population:
 		'''
 		self.population_size = population_size
 		self.snakes = []
+		self.globalScore = 0
+		self.globalBest = None
 		# Generate a random population
 		for _ in range(population_size):
 			self.snakes.append(Snake())
@@ -30,16 +34,50 @@ class Population:
 		fitness.sort(reverse=True)
 		best = self.snakes[fitness[0][1]].clone()
 		self.best = best
-		print(best.score)
-		new_population = []
-		for i in range(self.population_size // 2):
-			new_population.append(self.snakes[fitness[i][1]])
-		for i in range(self.population_size // 2):
-			child = best.cross_over(self.snakes[fitness[i][1]])
+		if self.globalBest == None:
+			self.globalBest = best
+		if self.globalScore < best.score:
+			self.globalScore = best.score
+			self.globalBest = best
+		print('Current best score: ', best.score)
+		new_population = [self.globalBest.clone()]
+		for i in range(1, self.population_size):
+			parent1 = self.select_snake(fitness)
+			parent2 = self.select_snake(fitness)
+			child = parent1.cross_over(parent2)
 			child.mutate(mutation_rate)
 			new_population.append(child)
 		self.snakes = new_population
 
+	def select_snake(self, scores):
+		tsum = 0
+		for score, i in scores:
+			tsum += score
+		rand = np.random.randint(1, int(tsum))
+		curr_sum = 0.
+		for score, i in scores:
+			curr_sum += score
+			if curr_sum >= rand:
+				return self.snakes[i]
+		# Unreachable code
+		assert(False)
+
+	def save(self, name):
+		'''
+		Saves the entire population
+		'''
+		filename = 'saved/' + name + '.pickle'
+		with open(filename, 'wb') as f:
+			pickle.dump(self.__dict__, f)
+	
+	def load(self, name):
+		'''
+		Loads the population from saved file
+		'''
+		filename = 'saved/' + name + '.pickle'
+		with open(filename, 'rb') as f:
+			tmp_dict = pickle.load(f)
+		self.__dict__.update(tmp_dict)
 
 class Snake:
 
@@ -59,7 +97,7 @@ class Snake:
 		g = Game()
 		# Play the game and return the score
 		score, time = g.play(self.brain)
-		self.score = score * score + math.sqrt(time)
+		self.score = math.pow(2, score) * time * time
 		return score
 
 	def clone(self):
@@ -88,8 +126,11 @@ class Snake:
 		return snake
 
 
+
 if __name__ == '__main__':
-	population = Population(50)
+	population = Population(100)
+	# with open('pop1.pickle', 'rb') as f:
+	# 	population = pickle.load(f)
 	for i in range(10):
 		print('Generation: ', i+1)
 		population.natural_selection()

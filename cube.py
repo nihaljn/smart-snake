@@ -2,8 +2,8 @@ import pygame
 
 class Cube(object):
 
-    rows = 20
-    w = 500
+    rows = 50
+    w = 1000
 
     def __init__(self, start, dirnx = 1, dirny = 0, color = (255,0,0)):
 

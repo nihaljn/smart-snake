@@ -40,7 +40,7 @@ class Brain:
 			raise ValueError('Invalid percept length')
 		# 1 for bias term
 		percept = np.append(percept, 1)
-		percept = percept.reshape(-1, 1).T
+		percept = percept.reshape(1, -1)
 		feed = percept
 		# Feed Forward
 		for layer in self.hidden_layers:
@@ -107,7 +107,8 @@ class Layer:
 		nx += 1
 		self.nx = nx
 		self.ny = ny
-		mat = np.random.normal(size=(nx, ny))
+		# Random values between [-1, 1]
+		mat = np.random.random(size=(nx, ny)) * 2 - 1
 		self.mat = mat
 		self.is_output = is_output
 		self.activation = self.sigmoid
@@ -149,17 +150,17 @@ class Layer:
 			for j in range(self.ny):
 				chance = float(np.random.random(1))
 				if chance <= prob:
-					self.mat[i][j] += float(np.random.randn(1) / 5)
+					change = float(np.random.random(1) * 2 - 1)
+					self.mat[i][j] += change
 				# Bounding weights in [-1, 1]
-				# self.mat[i][j] = min(1, self.mat[i][j])
-				# self.mat[i][j] = max(-1, self.mat[i][j])
+				self.mat[i][j] = min(1, self.mat[i][j])
+				self.mat[i][j] = max(-1, self.mat[i][j])
 
 	def cross_over(self, layer):
 		'''
 		Performs crossover on the 'this' layer with layer
 		Attributes:
 			layer: partner layer
-			prob: crossover rate
 		'''
 		new_layer = self.clone()
 		x = np.random.randint(0, self.nx)

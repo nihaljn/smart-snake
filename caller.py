@@ -5,4 +5,4 @@ import importlib
 for i in range(3):
     game = Game()
     game.play()
-    time.sleep(1) 
+    time.sleep(1)
