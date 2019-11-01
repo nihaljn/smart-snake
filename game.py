@@ -14,7 +14,7 @@ class Game(object):
         
         self.width = 1000
         self.height = 1000
-        self.rows = 50
+        self.rows = 40
 
         # initializes the window and returns a surface of size (width, height)
         self.window = pygame.display.set_mode((self.width,self.height + 50))
@@ -105,21 +105,19 @@ class Game(object):
 
     def sense_percepts(self):
         '''
-        Retrieves percept from all 8 directions
+        Retrieves percept from all 4 directions
         '''
-        dx = [-1, -1, -1, 0, 1, 1, 1, 0]
-        dy = [-1, 0, 1, 1, 1, 0, -1, -1]
+        dx = [-1, 0, 1, 0]
+        dy = [0, 1, 0, -1]
         # Food
-        dirf = np.zeros(8)
-        # Tail
-        dirt = np.zeros(8)
-        # Wall
-        dirw = np.zeros(8)
+        dirf = np.zeros(4)
+        # Obstacle
+        diro = np.zeros(4)
         x, y = self.player.body[0].pos
         body_pos = []
         for b in self.player.body:
             body_pos.append(b.pos)
-        for i in range(8):
+        for i in range(4):
             nx = x
             ny = y
             distance = 0
@@ -131,11 +129,12 @@ class Game(object):
                 nx += dx[i]
                 ny += dy[i]
                 distance += 1
-                if (nx, ny) in body_pos and dirt[i] == 0:
+                if (nx, ny) in body_pos and diro[i] == 0:
                     # Found tail in this direction
-                    dirt[i] = 1 / distance
-            dirw[i] = 1 / distance
-        percept = np.concatenate([dirf, dirt, dirw])
+                    diro[i] = 1 / distance
+            if diro[i] == 0:
+                diro[i] = 1 / max(distance, 1)
+        percept = np.concatenate([dirf, diro])
         return percept
 
     def reset(self):

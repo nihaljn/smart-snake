@@ -2,7 +2,7 @@ import pygame
 
 class Cube(object):
 
-    rows = 50
+    rows = 40
     w = 1000
 
     def __init__(self, start, dirnx = 1, dirny = 0, color = (255,0,0)):

@@ -3,8 +3,9 @@ from game import Game
 import math
 import numpy as np
 import pickle
+from random import shuffle
 
-nn_config = [24, 16]
+nn_config = [8, 16]
 mutation_rate = 0.01
 
 class Population:
@@ -41,7 +42,12 @@ class Population:
 			self.globalBest = best
 		print('Current best score: ', best.score)
 		new_population = [self.globalBest.clone()]
-		for i in range(1, self.population_size):
+		rand = np.random.randint(1, self.population_size)
+		for i in range(1, rand):
+			new_population.append(self.snakes[fitness[i][1]])
+		# Shuffling for randomness
+		shuffle(fitness)
+		for i in range(rand, self.population_size):
 			parent1 = self.select_snake(fitness)
 			parent2 = self.select_snake(fitness)
 			child = parent1.cross_over(parent2)
@@ -131,6 +137,7 @@ if __name__ == '__main__':
 	population = Population(100)
 	# with open('pop1.pickle', 'rb') as f:
 	# 	population = pickle.load(f)
-	for i in range(10):
+	for i in range(50):
 		print('Generation: ', i+1)
 		population.natural_selection()
+	population.save('poprp')
