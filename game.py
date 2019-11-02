@@ -231,8 +231,6 @@ class Game(object):
             
             for x in range(len(self.player.body)):
                 if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or cnt_moves > 300:
-                    self.reset()
-                    self.redraw_window()
                     return len(self.player.body), lifetime
 
             self.redraw_window()

@@ -103,7 +103,10 @@ class Snake:
 		g = Game()
 		# Play the game and return the score
 		score, time = g.play(self.brain)
-		self.score = math.pow(2, score) * time * time
+		if score < 10:
+			self.score = math.pow(2, score) * time * time
+		else:
+			self.score = math.pow(2, 10) * time * time * score * score
 		return score
 
 	def clone(self):
@@ -135,8 +138,11 @@ class Snake:
 
 if __name__ == '__main__':
 	population = Population(100)
-	population.load('poprp')
-	for i in range(10):
-		print('Generation: ', i+1)
-		population.natural_selection()
-	population.save('poprp2')
+	population.load('poprp2')
+	try:
+		for i in range(10):
+			print('Generation: ', i+1)
+			population.natural_selection()
+	except:
+		population.save('tmp')
+	population.save('poprp3')
