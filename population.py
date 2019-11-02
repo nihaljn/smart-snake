@@ -4,6 +4,7 @@ import math
 import numpy as np
 import pickle
 from random import shuffle
+from gamesim import GameSim
 
 nn_config = [8, 16]
 mutation_rate = 0.01
@@ -18,7 +19,6 @@ class Population:
 		'''
 		self.population_size = population_size
 		self.snakes = []
-		self.globalScore = 0
 		self.globalBest = None
 		# Generate a random population
 		for _ in range(population_size):
@@ -30,17 +30,17 @@ class Population:
 		'''
 		fitness = []
 		for i, snake in enumerate(self.snakes):
-			snake.play()
+			snake.train()
 			fitness.append((snake.score, i))
 		fitness.sort(reverse=True)
 		best = self.snakes[fitness[0][1]].clone()
 		self.best = best
 		if self.globalBest == None:
 			self.globalBest = best
-		if self.globalScore < best.score:
-			self.globalScore = best.score
+		if self.globalBest.score < best.score:
 			self.globalBest = best
 		print('Current best score: ', best.score)
+		print('Best length: ', best.len)
 		new_population = [self.globalBest.clone()]
 		rand = np.random.randint(1, self.population_size)
 		for i in range(1, rand):
@@ -103,12 +103,30 @@ class Snake:
 		g = Game()
 		# Play the game and return the score
 		score, time = g.play(self.brain)
+		self.len = score
 		if score < 10:
 			self.score = math.pow(2, score) * time * time
 		else:
-			self.score = math.pow(2, 10) * time * time * score * score
+			score -= 9
+			self.score = math.pow(2, 10) * time * time * score * score * score
 		return score
 
+	def train(self):
+		'''
+		Plays snake without pygame for superfast training time.
+		Note: High CPU usage. Don't provide very large number of generations to train in one go.
+		'''
+		g = GameSim()
+		# Play the game and return the score
+		score, time = g.play(self.brain)
+		self.len = score
+		if score < 10:
+			self.score = math.pow(2, score) * time * time
+		else:
+			score -= 9
+			self.score = math.pow(2, 10) * time * time * score * score * score
+		return score
+	
 	def clone(self):
 		'''
 		Generates clone of the snake
@@ -116,6 +134,7 @@ class Snake:
 		b = self.brain.clone()
 		snake = Snake(b)
 		snake.score = self.score
+		snake.len = self.len
 		return snake
 	
 	def mutate(self, prob):
@@ -138,11 +157,13 @@ class Snake:
 
 if __name__ == '__main__':
 	population = Population(100)
-	population.load('poprp2')
+	population.load('poprp4')
 	try:
-		for i in range(10):
+		for i in range(100):
 			print('Generation: ', i+1)
 			population.natural_selection()
-	except:
+	except Exception as e:
+		print(e)
 		population.save('tmp')
-	population.save('poprp3')
+		exit()
+	population.save('poprp5')

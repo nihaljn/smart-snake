@@ -53,9 +53,8 @@ class Game(object):
     def random_snack(self):
         positions = self.player.body
         while True:
-            x = random.randrange(self.rows)
-            y = random.randrange(self.rows)
-
+            x = np.random.randint(1, self.rows)
+            y = np.random.randint(1, self.rows)
             # ensuring the snack does not occur
             # along the body of snake
             if len(list(filter(lambda z:z.pos == (x,y), positions))) > 0 or self.hits_wall((x, y)):
@@ -229,9 +228,8 @@ class Game(object):
             if self.hits_wall(self.player.body[0].pos):
                 return len(self.player.body), lifetime
             
-            for x in range(len(self.player.body)):
-                if len(self.player.body) > 1 and self.player.body[x].pos in list(map(lambda z:z.pos,self.player.body[x+1:])) or cnt_moves > 300:
-                    return len(self.player.body), lifetime
+            if (len(self.player.body) > 1 and self.player.body[0].pos in list(map(lambda z:z.pos,self.player.body[1:]))) or cnt_moves > 300:
+                return len(self.player.body), lifetime
 
             self.redraw_window()
             cnt_moves += 1
@@ -239,4 +237,4 @@ class Game(object):
 if __name__ == '__main__':
 
     game = Game()
-    game.play()
+    print(game.play())
