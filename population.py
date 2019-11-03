@@ -26,27 +26,35 @@ class Population:
 	
 	def natural_selection(self):
 		'''
-		Peforms one iteration of natural selection
+		Peforms one iteration of natural selection to produce stable new generation.
+		Uses Roulette Wheel selection and random elitism
 		'''
 		fitness = []
+		# Total length of all snakes (for calculating average)
+		totlen = 0
 		for i, snake in enumerate(self.snakes):
 			snake.train()
 			fitness.append((snake.score, i))
+			totlen += snake.len
 		fitness.sort(reverse=True)
 		best = self.snakes[fitness[0][1]].clone()
 		self.best = best
+		# Store the global best of all times
 		if self.globalBest == None:
 			self.globalBest = best
 		if self.globalBest.score < best.score:
 			self.globalBest = best
 		print('Current best score: ', best.score)
 		print('Best length: ', best.len)
+		print('Average length: ', totlen / self.population_size)
 		new_population = [self.globalBest.clone()]
+		# Select best 'rand' individuals and keep them for next generation (random elitism)
 		rand = np.random.randint(1, self.population_size)
 		for i in range(1, rand):
 			new_population.append(self.snakes[fitness[i][1]])
 		# Shuffling for randomness
 		shuffle(fitness)
+		# Generate new snakes by crossover and mutation
 		for i in range(rand, self.population_size):
 			parent1 = self.select_snake(fitness)
 			parent2 = self.select_snake(fitness)
@@ -56,6 +64,9 @@ class Population:
 		self.snakes = new_population
 
 	def select_snake(self, scores):
+		'''
+		Selects snake for crossover using Roulette Wheel selection strategy
+		'''
 		tsum = 0
 		for score, i in scores:
 			tsum += score
@@ -105,11 +116,11 @@ class Snake:
 		score, time = g.play(self.brain)
 		self.len = score
 		if score < 10:
-			self.score = math.pow(2, score) * time * time
+			self.score = math.pow(2, score) * time
 		else:
 			score -= 9
-			self.score = math.pow(2, 10) * time * time * score * score * score
-		return score
+			self.score = math.pow(2, 10) * time * score * score
+		return self.score
 
 	def train(self):
 		'''
@@ -121,11 +132,11 @@ class Snake:
 		score, time = g.play(self.brain)
 		self.len = score
 		if score < 10:
-			self.score = math.pow(2, score) * time * time
+			self.score = math.pow(2, score) * time
 		else:
 			score -= 9
-			self.score = math.pow(2, 10) * time * time * score * score * score
-		return score
+			self.score = math.pow(2, 10) * time * score * score
+		return self.score
 	
 	def clone(self):
 		'''
@@ -157,13 +168,13 @@ class Snake:
 
 if __name__ == '__main__':
 	population = Population(100)
-	population.load('poprp4')
+	population.load('poprp1.1')
 	try:
-		for i in range(100):
+		for i in range(500):
 			print('Generation: ', i+1)
 			population.natural_selection()
 	except Exception as e:
 		print(e)
 		population.save('tmp')
 		exit()
-	population.save('poprp5')
+	population.save('poprp1.2')

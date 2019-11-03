@@ -1,0 +1,2495 @@
+Generation:  1
+Current best score:  5958058086162432.0
+Best length:  71
+Generation:  2
+Current best score:  7248831918080000.0
+Best length:  71
+Generation:  3
+Current best score:  7161313666654208.0
+Best length:  71
+Generation:  4
+Current best score:  8450363803369472.0
+Best length:  77
+Generation:  5
+Current best score:  3240549903458304.0
+Best length:  63
+Generation:  6
+Current best score:  5923169582459904.0
+Best length:  68
+Generation:  7
+Current best score:  3277945716134912.0
+Best length:  62
+Generation:  8
+Current best score:  4256664641961984.0
+Best length:  63
+Generation:  9
+Current best score:  6948749678477312.0
+Best length:  71
+Generation:  10
+Current best score:  7247367446462464.0
+Best length:  70
+
+
+Generation:  1
+Current best score:  3712747211849728.0
+Best length:  61
+Generation:  2
+Current best score:  8430626229977088.0
+Best length:  76
+Generation:  3
+Current best score:  3398566886793216.0
+Best length:  63
+Generation:  4
+Current best score:  4717146659618816.0
+Best length:  68
+Generation:  5
+Current best score:  4089334900064256.0
+Best length:  63
+Generation:  6
+Current best score:  1690845125132288.0
+Best length:  56
+Generation:  7
+Current best score:  9404518357794816.0
+Best length:  73
+Generation:  8
+Current best score:  5588912021962752.0
+Best length:  72
+Generation:  9
+Current best score:  3942221714194432.0
+Best length:  67
+Generation:  10
+Current best score:  3173811875020800.0
+Best length:  61
+
+
+Generation:  1
+Current best score:  6528135258906624.0
+Best length:  75
+Generation:  2
+Current best score:  1.0283693980672e+16
+Best length:  79
+Generation:  3
+Current best score:  5406304830488576.0
+Best length:  65
+Generation:  4
+Current best score:  1.3129362240898048e+16
+Best length:  82
+Generation:  5
+Current best score:  6009957158630400.0
+Best length:  70
+Generation:  6
+Current best score:  5306184515062784.0
+Best length:  68
+Generation:  7
+Current best score:  3581592035549184.0
+Best length:  63
+Generation:  8
+Current best score:  8807363016392704.0
+Best length:  73
+Generation:  9
+Current best score:  5211386118144000.0
+Best length:  69
+Generation:  10
+Current best score:  5801387042276352.0
+Best length:  66
+
+Generation:  1
+Current best score:  16423475200.0
+Best length:  64
+Generation:  2
+Current best score:  21869838336.0
+Best length:  71
+Generation:  3
+Current best score:  17195360256.0
+Best length:  68
+Generation:  4
+Current best score:  26942013440.0
+Best length:  77
+Generation:  5
+Current best score:  15892545536.0
+Best length:  65
+Generation:  6
+Current best score:  24236492800.0
+Best length:  74
+Generation:  7
+Current best score:  21460705280.0
+Best length:  67
+Generation:  8
+Current best score:  13876816896.0
+Best length:  66
+Generation:  9
+Current best score:  26058498048.0
+Best length:  75
+Generation:  10
+Current best score:  11763200000.0
+Best length:  59
+Generation:  11
+Current best score:  12282822656.0
+Best length:  61
+Generation:  12
+Current best score:  32785031168.0
+Best length:  82
+Generation:  13
+Current best score:  11932139520.0
+Best length:  60
+Generation:  14
+Current best score:  27396546560.0
+Best length:  76
+Generation:  15
+Current best score:  30256496640.0
+Best length:  77
+Generation:  16
+Current best score:  17366515712.0
+Best length:  65
+Generation:  17
+Current best score:  28447735808.0
+Best length:  77
+Generation:  18
+Current best score:  22031224832.0
+Best length:  71
+Generation:  19
+Current best score:  24943362048.0
+Best length:  75
+Generation:  20
+Current best score:  22130245632.0
+Best length:  70
+Generation:  21
+Current best score:  17376795648.0
+Best length:  66
+Generation:  22
+Current best score:  10146741248.0
+Best length:  58
+Generation:  23
+Current best score:  22556966912.0
+Best length:  73
+Generation:  24
+Current best score:  32800702464.0
+Best length:  81
+Generation:  25
+Current best score:  20019798016.0
+Best length:  71
+Generation:  26
+Current best score:  30450898944.0
+Best length:  78
+Generation:  27
+Current best score:  21802559488.0
+Best length:  70
+Generation:  28
+Current best score:  26265749504.0
+Best length:  76
+Generation:  29
+Current best score:  63167846400.0
+Best length:  96
+Generation:  30
+Current best score:  21105273856.0
+Best length:  70
+Generation:  31
+Current best score:  31493264384.0
+Best length:  80
+Generation:  32
+Current best score:  42787749888.0
+Best length:  87
+Generation:  33
+Current best score:  32343449600.0
+Best length:  79
+Generation:  34
+Current best score:  16341827584.0
+Best length:  67
+Generation:  35
+Current best score:  12161193984.0
+Best length:  60
+Generation:  36
+Current best score:  11458560000.0
+Best length:  59
+Generation:  37
+Current best score:  18571180032.0
+Best length:  66
+Generation:  38
+Current best score:  37727033344.0
+Best length:  86
+Generation:  39
+Current best score:  27932979200.0
+Best length:  79
+Generation:  40
+Current best score:  24058527744.0
+Best length:  73
+Generation:  41
+Current best score:  38968750080.0
+Best length:  87
+Generation:  42
+Current best score:  21341512704.0
+Best length:  70
+Generation:  43
+Current best score:  40414625792.0
+Best length:  85
+Generation:  44
+Current best score:  21964308480.0
+Best length:  71
+Generation:  45
+Current best score:  31624904704.0
+Best length:  77
+Generation:  46
+Current best score:  37333106688.0
+Best length:  85
+Generation:  47
+Current best score:  34875022336.0
+Best length:  82
+Generation:  48
+Current best score:  24734028800.0
+Best length:  74
+Generation:  49
+Current best score:  22044524544.0
+Best length:  72
+Generation:  50
+Current best score:  21666548736.0
+Best length:  72
+Generation:  51
+Current best score:  20522297344.0
+Best length:  70
+Generation:  52
+Current best score:  23955276800.0
+Best length:  74
+Generation:  53
+Current best score:  27164712960.0
+Best length:  75
+Generation:  54
+Current best score:  21479592960.0
+Best length:  72
+Generation:  55
+Current best score:  27699609600.0
+Best length:  77
+Generation:  56
+Current best score:  28675584000.0
+Best length:  79
+Generation:  57
+Current best score:  30646699008.0
+Best length:  80
+Generation:  58
+Current best score:  24235158528.0
+Best length:  72
+Generation:  59
+Current best score:  21078650880.0
+Best length:  71
+Generation:  60
+Current best score:  27921171456.0
+Best length:  80
+Generation:  61
+Current best score:  18685407232.0
+Best length:  71
+Generation:  62
+Current best score:  30714494976.0
+Best length:  81
+Generation:  63
+Current best score:  42441196544.0
+Best length:  88
+Generation:  64
+Current best score:  21546139648.0
+Best length:  73
+Generation:  65
+Current best score:  31871729664.0
+Best length:  81
+Generation:  66
+Current best score:  22145376256.0
+Best length:  71
+Generation:  67
+Current best score:  27436236800.0
+Best length:  79
+Generation:  68
+Current best score:  13993763840.0
+Best length:  62
+Generation:  69
+Current best score:  28695654400.0
+Best length:  79
+Generation:  70
+Current best score:  19011497984.0
+Best length:  67
+Generation:  71
+Current best score:  23857182720.0
+Best length:  72
+Generation:  72
+Current best score:  20198421504.0
+Best length:  70
+Generation:  73
+Current best score:  22869350400.0
+Best length:  74
+Generation:  74
+Current best score:  34896849920.0
+Best length:  82
+Generation:  75
+Current best score:  34807283712.0
+Best length:  81
+Generation:  76
+Current best score:  33358086144.0
+Best length:  81
+Generation:  77
+Current best score:  32752289792.0
+Best length:  82
+Generation:  78
+Current best score:  27974238208.0
+Best length:  77
+Generation:  79
+Current best score:  25337208832.0
+Best length:  76
+Generation:  80
+Current best score:  21142259712.0
+Best length:  72
+Generation:  81
+Current best score:  21122514944.0
+Best length:  73
+Generation:  82
+Current best score:  32665034752.0
+Best length:  80
+Generation:  83
+Current best score:  21048119296.0
+Best length:  70
+Generation:  84
+Current best score:  24720334848.0
+Best length:  75
+Generation:  85
+Current best score:  28456915968.0
+Best length:  78
+Generation:  86
+Current best score:  24420532224.0
+Best length:  71
+Generation:  87
+Current best score:  33341254656.0
+Best length:  80
+Generation:  88
+Current best score:  27561701376.0
+Best length:  75
+Generation:  89
+Current best score:  31630950400.0
+Best length:  79
+Generation:  90
+Current best score:  12126969856.0
+Best length:  62
+Generation:  91
+Current best score:  23001563136.0
+Best length:  73
+Generation:  92
+Current best score:  26003109888.0
+Best length:  72
+Generation:  93
+Current best score:  30351462400.0
+Best length:  79
+Generation:  94
+Current best score:  34704347136.0
+Best length:  83
+Generation:  95
+Current best score:  22628339712.0
+Best length:  75
+Generation:  96
+Current best score:  40566784000.0
+Best length:  89
+Generation:  97
+Current best score:  24102374400.0
+Best length:  74
+Generation:  98
+Current best score:  31851901952.0
+Best length:  82
+Generation:  99
+Current best score:  24871993344.0
+Best length:  75
+Generation:  100
+Current best score:  36533918720.0
+Best length:  82
+Generation:  101
+Current best score:  29087779840.0
+Best length:  80
+Generation:  102
+Current best score:  26960953344.0
+Best length:  77
+Generation:  103
+Current best score:  45114982400.0
+Best length:  89
+Generation:  104
+Current best score:  25665970176.0
+Best length:  75
+Generation:  105
+Current best score:  21334781952.0
+Best length:  75
+Generation:  106
+Current best score:  24528183296.0
+Best length:  76
+Generation:  107
+Current best score:  24901696512.0
+Best length:  72
+Generation:  108
+Current best score:  38200320000.0
+Best length:  84
+Generation:  109
+Current best score:  28932920320.0
+Best length:  80
+Generation:  110
+Current best score:  27135180800.0
+Best length:  74
+Generation:  111
+Current best score:  48473047040.0
+Best length:  91
+Generation:  112
+Current best score:  21097552896.0
+Best length:  72
+Generation:  113
+Current best score:  25398411264.0
+Best length:  77
+Generation:  114
+Current best score:  40479993856.0
+Best length:  83
+Generation:  115
+Current best score:  31441644544.0
+Best length:  80
+Generation:  116
+Current best score:  30159507456.0
+Best length:  87
+Generation:  117
+Current best score:  22668898304.0
+Best length:  71
+Generation:  118
+Current best score:  32551471104.0
+Best length:  80
+Generation:  119
+Current best score:  30348214272.0
+Best length:  81
+Generation:  120
+Current best score:  30056251392.0
+Best length:  81
+Generation:  121
+Current best score:  32100480000.0
+Best length:  84
+Generation:  122
+Current best score:  33016049664.0
+Best length:  80
+Generation:  123
+Current best score:  23747609600.0
+Best length:  74
+Generation:  124
+Current best score:  28042518528.0
+Best length:  78
+Generation:  125
+Current best score:  36487315456.0
+Best length:  85
+Generation:  126
+Current best score:  21688745984.0
+Best length:  73
+Generation:  127
+Current best score:  35115122688.0
+Best length:  85
+Generation:  128
+Current best score:  26303827968.0
+Best length:  75
+Generation:  129
+Current best score:  33991344128.0
+Best length:  85
+Generation:  130
+Current best score:  30193005568.0
+Best length:  82
+Generation:  131
+Current best score:  26431232000.0
+Best length:  76
+Generation:  132
+Current best score:  30904798208.0
+Best length:  80
+Generation:  133
+Current best score:  20207480832.0
+Best length:  72
+Generation:  134
+Current best score:  26058498048.0
+Best length:  75
+Generation:  135
+Current best score:  37365120000.0
+Best length:  84
+Generation:  136
+Current best score:  22154259456.0
+Best length:  72
+Generation:  137
+Current best score:  30533135360.0
+Best length:  80
+Generation:  138
+Current best score:  30063394816.0
+Best length:  80
+Generation:  139
+Current best score:  44725284864.0
+Best length:  87
+Generation:  140
+Current best score:  26956218368.0
+Best length:  77
+Generation:  141
+Current best score:  25037033472.0
+Best length:  75
+Generation:  142
+Current best score:  14998007808.0
+Best length:  66
+Generation:  143
+Current best score:  29317836800.0
+Best length:  79
+Generation:  144
+Current best score:  31104102400.0
+Best length:  79
+Generation:  145
+Current best score:  29001728000.0
+Best length:  79
+Generation:  146
+Current best score:  33532625920.0
+Best length:  82
+Generation:  147
+Current best score:  28826112000.0
+Best length:  79
+Generation:  148
+Current best score:  27060387840.0
+Best length:  77
+Generation:  149
+Current best score:  33182908416.0
+Best length:  81
+Generation:  150
+Current best score:  24434307072.0
+Best length:  72
+Generation:  151
+Current best score:  28555161600.0
+Best length:  79
+Generation:  152
+Current best score:  50367873024.0
+Best length:  93
+Generation:  153
+Current best score:  30892081152.0
+Best length:  85
+Generation:  154
+Current best score:  30231512064.0
+Best length:  78
+Generation:  155
+Current best score:  34677440512.0
+Best length:  85
+Generation:  156
+Current best score:  28449792000.0
+Best length:  79
+Generation:  157
+Current best score:  23556132864.0
+Best length:  75
+Generation:  158
+Current best score:  48785522688.0
+Best length:  93
+Generation:  159
+Current best score:  19479979008.0
+Best length:  72
+Generation:  160
+Current best score:  27902873600.0
+Best length:  79
+Generation:  161
+Current best score:  20321100800.0
+Best length:  74
+Generation:  162
+Current best score:  28062019584.0
+Best length:  78
+Generation:  163
+Current best score:  23387439104.0
+Best length:  73
+Generation:  164
+Current best score:  33358086144.0
+Best length:  81
+Generation:  165
+Current best score:  20857574400.0
+Best length:  74
+Generation:  166
+Current best score:  21975432192.0
+Best length:  72
+Generation:  167
+Current best score:  19748196352.0
+Best length:  71
+Generation:  168
+Current best score:  20476403712.0
+Best length:  71
+Generation:  169
+Current best score:  38384640000.0
+Best length:  84
+Generation:  170
+Current best score:  34120714240.0
+Best length:  80
+Generation:  171
+Current best score:  26131456000.0
+Best length:  74
+Generation:  172
+Current best score:  29468364800.0
+Best length:  79
+Generation:  173
+Current best score:  21307219968.0
+Best length:  70
+Generation:  174
+Current best score:  22520042496.0
+Best length:  72
+Generation:  175
+Current best score:  29516224512.0
+Best length:  80
+Generation:  176
+Current best score:  20107493376.0
+Best length:  73
+Generation:  177
+Current best score:  22463142912.0
+Best length:  72
+Generation:  178
+Current best score:  18509414400.0
+Best length:  69
+Generation:  179
+Current best score:  29281091584.0
+Best length:  77
+Generation:  180
+Current best score:  25816574976.0
+Best length:  82
+Generation:  181
+Current best score:  24985468928.0
+Best length:  73
+Generation:  182
+Current best score:  26596360192.0
+Best length:  77
+Generation:  183
+Current best score:  17141760000.0
+Best length:  69
+Generation:  184
+Current best score:  28432207872.0
+Best length:  80
+Generation:  185
+Current best score:  26602368000.0
+Best length:  82
+Generation:  186
+Current best score:  44650911744.0
+Best length:  90
+Generation:  187
+Current best score:  36422959104.0
+Best length:  80
+Generation:  188
+Current best score:  53667993600.0
+Best length:  94
+Generation:  189
+Current best score:  17276986368.0
+Best length:  66
+Generation:  190
+Current best score:  24369278976.0
+Best length:  72
+Generation:  191
+Current best score:  31452041216.0
+Best length:  83
+Generation:  192
+Current best score:  38180950016.0
+Best length:  83
+Generation:  193
+Current best score:  19032910848.0
+Best length:  72
+Generation:  194
+Current best score:  15023360000.0
+Best length:  64
+Generation:  195
+Current best score:  28049670144.0
+Best length:  81
+Generation:  196
+Current best score:  40525900800.0
+Best length:  86
+Generation:  197
+Current best score:  28297506816.0
+Best length:  76
+Generation:  198
+Current best score:  48648397824.0
+Best length:  90
+Generation:  199
+Current best score:  27638054912.0
+Best length:  77
+Generation:  200
+Current best score:  33703133184.0
+Best length:  81
+Generation:  201
+Current best score:  101732143104.0
+Best length:  111
+Generation:  202
+Current best score:  41892480000.0
+Best length:  84
+Generation:  203
+Current best score:  24550850560.0
+Best length:  77
+Generation:  204
+Current best score:  25414144000.0
+Best length:  79
+Generation:  205
+Current best score:  23691577344.0
+Best length:  76
+Generation:  206
+Current best score:  23847866368.0
+Best length:  76
+Generation:  207
+Current best score:  24419237888.0
+Best length:  73
+Generation:  208
+Current best score:  58237726720.0
+Best length:  98
+Generation:  209
+Current best score:  42413663232.0
+Best length:  90
+Generation:  210
+Current best score:  36904320000.0
+Best length:  84
+Generation:  211
+Current best score:  26984652800.0
+Best length:  79
+Generation:  212
+Current best score:  29503488000.0
+Best length:  79
+Generation:  213
+Current best score:  39757067264.0
+Best length:  88
+Generation:  214
+Current best score:  35594207232.0
+Best length:  85
+Generation:  215
+Current best score:  22886656000.0
+Best length:  74
+Generation:  216
+Current best score:  23721172992.0
+Best length:  75
+Generation:  217
+Current best score:  27350579200.0
+Best length:  76
+Generation:  218
+Current best score:  25309628416.0
+Best length:  76
+Generation:  219
+Current best score:  25685094400.0
+Best length:  79
+Generation:  220
+Current best score:  25643888640.0
+Best length:  78
+Generation:  221
+Current best score:  34269306880.0
+Best length:  82
+Generation:  222
+Current best score:  27049881600.0
+Best length:  79
+Generation:  223
+Current best score:  43624013824.0
+Best length:  92
+Generation:  224
+Current best score:  20122086400.0
+Best length:  74
+Generation:  225
+Current best score:  39991626752.0
+Best length:  86
+Generation:  226
+Current best score:  35450134528.0
+Best length:  83
+Generation:  227
+Current best score:  20841496576.0
+Best length:  73
+Generation:  228
+Current best score:  39098816512.0
+Best length:  88
+Generation:  229
+Current best score:  17287349248.0
+Best length:  70
+Generation:  230
+Current best score:  44374425600.0
+Best length:  89
+Generation:  231
+Current best score:  46186195968.0
+Best length:  88
+Generation:  232
+Current best score:  26553745408.0
+Best length:  77
+Generation:  233
+Current best score:  33110651904.0
+Best length:  88
+Generation:  234
+Current best score:  39305170944.0
+Best length:  87
+Generation:  235
+Current best score:  19858074624.0
+Best length:  68
+Generation:  236
+Current best score:  49946517504.0
+Best length:  91
+Generation:  237
+Current best score:  39323520000.0
+Best length:  84
+Generation:  238
+Current best score:  42147220480.0
+Best length:  88
+Generation:  239
+Current best score:  26376071168.0
+Best length:  76
+Generation:  240
+Current best score:  39014148096.0
+Best length:  86
+Generation:  241
+Current best score:  34187453440.0
+Best length:  82
+Generation:  242
+Current best score:  36306350080.0
+Best length:  86
+Generation:  243
+Current best score:  31109764096.0
+Best length:  82
+Generation:  244
+Current best score:  27110080512.0
+Best length:  81
+Generation:  245
+Current best score:  21905264640.0
+Best length:  71
+Generation:  246
+Current best score:  33410184192.0
+Best length:  78
+Generation:  247
+Current best score:  24762616832.0
+Best length:  76
+Generation:  248
+Current best score:  25442933760.0
+Best length:  76
+Generation:  249
+Current best score:  34479360000.0
+Best length:  84
+Generation:  250
+Current best score:  25081638912.0
+Best length:  75
+Generation:  251
+Current best score:  39450309632.0
+Best length:  88
+Generation:  252
+Current best score:  18278028288.0
+Best length:  70
+Generation:  253
+Current best score:  33724800000.0
+Best length:  84
+Generation:  254
+Current best score:  43994316800.0
+Best length:  89
+Generation:  255
+Current best score:  26193887232.0
+Best length:  77
+Generation:  256
+Current best score:  24956743680.0
+Best length:  75
+Generation:  257
+Current best score:  33559910400.0
+Best length:  82
+Generation:  258
+Current best score:  24325926912.0
+Best length:  76
+Generation:  259
+Current best score:  29456324608.0
+Best length:  82
+Generation:  260
+Current best score:  25186795520.0
+Best length:  73
+Generation:  261
+Current best score:  25244116992.0
+Best length:  78
+Generation:  262
+Current best score:  41016222720.0
+Best length:  90
+Generation:  263
+Current best score:  33000563712.0
+Best length:  80
+Generation:  264
+Current best score:  28580315136.0
+Best length:  77
+Generation:  265
+Current best score:  41016222720.0
+Best length:  90
+Generation:  266
+Current best score:  30672000000.0
+Best length:  84
+Generation:  267
+Current best score:  51492253696.0
+Best length:  95
+Generation:  268
+Current best score:  29939507200.0
+Best length:  80
+Generation:  269
+Current best score:  40929198080.0
+Best length:  85
+Generation:  270
+Current best score:  67395649536.0
+Best length:  101
+Generation:  271
+Current best score:  34665095168.0
+Best length:  83
+Generation:  272
+Current best score:  29926821888.0
+Best length:  83
+Generation:  273
+Current best score:  32618576896.0
+Best length:  80
+Generation:  274
+Current best score:  40152453120.0
+Best length:  87
+Generation:  275
+Current best score:  28640460800.0
+Best length:  79
+Generation:  276
+Current best score:  34404335616.0
+Best length:  77
+Generation:  277
+Current best score:  31529398272.0
+Best length:  80
+Generation:  278
+Current best score:  40862674944.0
+Best length:  87
+Generation:  279
+Current best score:  20518487040.0
+Best length:  70
+Generation:  280
+Current best score:  27401306112.0
+Best length:  77
+Generation:  281
+Current best score:  40115948544.0
+Best length:  90
+Generation:  282
+Current best score:  44415123456.0
+Best length:  97
+Generation:  283
+Current best score:  32875020288.0
+Best length:  81
+Generation:  284
+Current best score:  29679353856.0
+Best length:  81
+Generation:  285
+Current best score:  21058228224.0
+Best length:  75
+Generation:  286
+Current best score:  35534245888.0
+Best length:  83
+Generation:  287
+Current best score:  29451469824.0
+Best length:  78
+Generation:  288
+Current best score:  34610872320.0
+Best length:  81
+Generation:  289
+Current best score:  23797002240.0
+Best length:  75
+Generation:  290
+Current best score:  49746841600.0
+Best length:  94
+Generation:  291
+Current best score:  24724795392.0
+Best length:  75
+Generation:  292
+Current best score:  35009280000.0
+Best length:  84
+Generation:  293
+Current best score:  28118630400.0
+Best length:  79
+Generation:  294
+Current best score:  21466447872.0
+Best length:  73
+Generation:  295
+Current best score:  46837260288.0
+Best length:  87
+Generation:  296
+Current best score:  38534515712.0
+Best length:  86
+Generation:  297
+Current best score:  37520292864.0
+Best length:  88
+Generation:  298
+Current best score:  26121664512.0
+Best length:  78
+Generation:  299
+Current best score:  42377646080.0
+Best length:  86
+Generation:  300
+Current best score:  26890905600.0
+Best length:  76
+Generation:  301
+Current best score:  36506702848.0
+Best length:  86
+Generation:  302
+Current best score:  25137987584.0
+Best length:  77
+Generation:  303
+Current best score:  22384793600.0
+Best length:  74
+Generation:  304
+Current best score:  31425028096.0
+Best length:  86
+Generation:  305
+Current best score:  36280033280.0
+Best length:  83
+Generation:  306
+Current best score:  31552974848.0
+Best length:  83
+Generation:  307
+Current best score:  31733710848.0
+Best length:  81
+Generation:  308
+Current best score:  45451255808.0
+Best length:  88
+Generation:  309
+Current best score:  38072434688.0
+Best length:  85
+Generation:  310
+Current best score:  42147220480.0
+Best length:  88
+Generation:  311
+Current best score:  41731819520.0
+Best length:  88
+Generation:  312
+Current best score:  44643123200.0
+Best length:  89
+Generation:  313
+Current best score:  26544275456.0
+Best length:  77
+Generation:  314
+Current best score:  42626580480.0
+Best length:  81
+Generation:  315
+Current best score:  22307180544.0
+Best length:  75
+Generation:  316
+Current best score:  34414460928.0
+Best length:  81
+Generation:  317
+Current best score:  24954675200.0
+Best length:  74
+Generation:  318
+Current best score:  30822206464.0
+Best length:  80
+Generation:  319
+Current best score:  23507656704.0
+Best length:  72
+Generation:  320
+Current best score:  43849752576.0
+Best length:  92
+Generation:  321
+Current best score:  40977707008.0
+Best length:  88
+Generation:  322
+Current best score:  33204142080.0
+Best length:  81
+Generation:  323
+Current best score:  29368012800.0
+Best length:  79
+Generation:  324
+Current best score:  26633567232.0
+Best length:  78
+Generation:  325
+Current best score:  21515575296.0
+Best length:  71
+Generation:  326
+Current best score:  28157583360.0
+Best length:  82
+Generation:  327
+Current best score:  28012509184.0
+Best length:  76
+Generation:  328
+Current best score:  75516346368.0
+Best length:  105
+Generation:  329
+Current best score:  21589327872.0
+Best length:  72
+Generation:  330
+Current best score:  25594601472.0
+Best length:  75
+Generation:  331
+Current best score:  27496005632.0
+Best length:  77
+Generation:  332
+Current best score:  61818163200.0
+Best length:  99
+Generation:  333
+Current best score:  18686361600.0
+Best length:  69
+Generation:  334
+Current best score:  18309324800.0
+Best length:  74
+Generation:  335
+Current best score:  20157566976.0
+Best length:  71
+Generation:  336
+Current best score:  32817772544.0
+Best length:  82
+Generation:  337
+Current best score:  20848921600.0
+Best length:  74
+Generation:  338
+Current best score:  33120000000.0
+Best length:  84
+Generation:  339
+Current best score:  33878310912.0
+Best length:  81
+Generation:  340
+Current best score:  38740939776.0
+Best length:  86
+Generation:  341
+Current best score:  37395910656.0
+Best length:  83
+Generation:  342
+Current best score:  32774160384.0
+Best length:  81
+Generation:  343
+Current best score:  51016957952.0
+Best length:  92
+Generation:  344
+Current best score:  40993505280.0
+Best length:  87
+Generation:  345
+Current best score:  42371574784.0
+Best length:  86
+Generation:  346
+Current best score:  38987440128.0
+Best length:  87
+Generation:  347
+Current best score:  39500955648.0
+Best length:  93
+Generation:  348
+Current best score:  45229916160.0
+Best length:  87
+Generation:  349
+Current best score:  33179127808.0
+Best length:  83
+Generation:  350
+Current best score:  25488901120.0
+Best length:  76
+Generation:  351
+Current best score:  32288937984.0
+Best length:  90
+Generation:  352
+Current best score:  29965107200.0
+Best length:  79
+Generation:  353
+Current best score:  52181434368.0
+Best length:  93
+Generation:  354
+Current best score:  30321494016.0
+Best length:  80
+Generation:  355
+Current best score:  17932400640.0
+Best length:  66
+Generation:  356
+Current best score:  24917474304.0
+Best length:  78
+Generation:  357
+Current best score:  31828508672.0
+Best length:  77
+Generation:  358
+Current best score:  25910886400.0
+Best length:  79
+Generation:  359
+Current best score:  42557239296.0
+Best length:  87
+Generation:  360
+Current best score:  32412097536.0
+Best length:  80
+Generation:  361
+Current best score:  27829645312.0
+Best length:  83
+Generation:  362
+Current best score:  35091259392.0
+Best length:  83
+Generation:  363
+Current best score:  25871143936.0
+Best length:  82
+Generation:  364
+Current best score:  17911833600.0
+Best length:  68
+Generation:  365
+Current best score:  37510926336.0
+Best length:  87
+Generation:  366
+Current best score:  28093542400.0
+Best length:  79
+Generation:  367
+Current best score:  32074465280.0
+Best length:  83
+Generation:  368
+Current best score:  27479287808.0
+Best length:  76
+Generation:  369
+Current best score:  33288915968.0
+Best length:  86
+Generation:  370
+Current best score:  34928640000.0
+Best length:  84
+Generation:  371
+Current best score:  34411972608.0
+Best length:  90
+Generation:  372
+Current best score:  35948160000.0
+Best length:  84
+Generation:  373
+Current best score:  29633945600.0
+Best length:  79
+Generation:  374
+Current best score:  42532061184.0
+Best length:  85
+Generation:  375
+Current best score:  20353794048.0
+Best length:  72
+Generation:  376
+Current best score:  31343566848.0
+Best length:  80
+Generation:  377
+Current best score:  26492190720.0
+Best length:  77
+Generation:  378
+Current best score:  32825954304.0
+Best length:  87
+Generation:  379
+Current best score:  45095321600.0
+Best length:  89
+Generation:  380
+Current best score:  22637905920.0
+Best length:  72
+Generation:  381
+Current best score:  26870988800.0
+Best length:  77
+Generation:  382
+Current best score:  17459970048.0
+Best length:  66
+Generation:  383
+Current best score:  26881712128.0
+Best length:  76
+Generation:  384
+Current best score:  34742501376.0
+Best length:  85
+Generation:  385
+Current best score:  27955678208.0
+Best length:  82
+Generation:  386
+Current best score:  16083293184.0
+Best length:  70
+Generation:  387
+Current best score:  29237555200.0
+Best length:  79
+Generation:  388
+Current best score:  25010634752.0
+Best length:  73
+Generation:  389
+Current best score:  47158236160.0
+Best length:  92
+Generation:  390
+Current best score:  44610600960.0
+Best length:  90
+Generation:  391
+Current best score:  33341743104.0
+Best length:  83
+Generation:  392
+Current best score:  54278553600.0
+Best length:  99
+Generation:  393
+Current best score:  30610927616.0
+Best length:  83
+Generation:  394
+Current best score:  25103499264.0
+Best length:  81
+Generation:  395
+Current best score:  45632716800.0
+Best length:  89
+Generation:  396
+Current best score:  27958616064.0
+Best length:  83
+Generation:  397
+Current best score:  35507082240.0
+Best length:  90
+Generation:  398
+Current best score:  29539224576.0
+Best length:  78
+Generation:  399
+Current best score:  31746355200.0
+Best length:  79
+Generation:  400
+Current best score:  20736638976.0
+Best length:  73
+Generation:  401
+Current best score:  39687127040.0
+Best length:  85
+Generation:  402
+Current best score:  42735167488.0
+Best length:  92
+Generation:  403
+Current best score:  32901562368.0
+Best length:  81
+Generation:  404
+Current best score:  35582377984.0
+Best length:  85
+Generation:  405
+Current best score:  51313240064.0
+Best length:  92
+Generation:  406
+Current best score:  16567201792.0
+Best length:  70
+Generation:  407
+Current best score:  48538587136.0
+Best length:  95
+Generation:  408
+Current best score:  50832288768.0
+Best length:  98
+Generation:  409
+Current best score:  33014220800.0
+Best length:  82
+Generation:  410
+Current best score:  30094201856.0
+Best length:  88
+Generation:  411
+Current best score:  17667320832.0
+Best length:  72
+Generation:  412
+Current best score:  26531315712.0
+Best length:  75
+Generation:  413
+Current best score:  27286224896.0
+Best length:  76
+Generation:  414
+Current best score:  34911027200.0
+Best length:  89
+Generation:  415
+Current best score:  24314425344.0
+Best length:  75
+Generation:  416
+Current best score:  40613474304.0
+Best length:  87
+Generation:  417
+Current best score:  12904601600.0
+Best length:  64
+Generation:  418
+Current best score:  31548604416.0
+Best length:  85
+Generation:  419
+Current best score:  33274454016.0
+Best length:  83
+Generation:  420
+Current best score:  19370786816.0
+Best length:  77
+Generation:  421
+Current best score:  22294953984.0
+Best length:  71
+Generation:  422
+Current best score:  23405824000.0
+Best length:  74
+Generation:  423
+Current best score:  32343621632.0
+Best length:  83
+Generation:  424
+Current best score:  18987614208.0
+Best length:  73
+Generation:  425
+Current best score:  40206336000.0
+Best length:  89
+Generation:  426
+Current best score:  21604659200.0
+Best length:  76
+Generation:  427
+Current best score:  35278654464.0
+Best length:  90
+Generation:  428
+Current best score:  22850150400.0
+Best length:  79
+Generation:  429
+Current best score:  49056574464.0
+Best length:  102
+Generation:  430
+Current best score:  34240167936.0
+Best length:  87
+Generation:  431
+Current best score:  21382050816.0
+Best length:  72
+Generation:  432
+Current best score:  42404851712.0
+Best length:  98
+Generation:  433
+Current best score:  14781754368.0
+Best length:  66
+Generation:  434
+Current best score:  27071041536.0
+Best length:  75
+Generation:  435
+Current best score:  33811047424.0
+Best length:  86
+Generation:  436
+Current best score:  28514025472.0
+Best length:  77
+Generation:  437
+Current best score:  22012126208.0
+Best length:  70
+Generation:  438
+Current best score:  28122243072.0
+Best length:  86
+Generation:  439
+Current best score:  38959628288.0
+Best length:  85
+Generation:  440
+Current best score:  36172800000.0
+Best length:  84
+Generation:  441
+Current best score:  43799961600.0
+Best length:  98
+Generation:  442
+Current best score:  29470814208.0
+Best length:  75
+Generation:  443
+Current best score:  28165439488.0
+Best length:  85
+Generation:  444
+Current best score:  33108480000.0
+Best length:  84
+Generation:  445
+Current best score:  33045120000.0
+Best length:  84
+Generation:  446
+Current best score:  54240657408.0
+Best length:  93
+Generation:  447
+Current best score:  27290726400.0
+Best length:  79
+Generation:  448
+Current best score:  38096785408.0
+Best length:  91
+Generation:  449
+Current best score:  24020425728.0
+Best length:  78
+Generation:  450
+Current best score:  27873939456.0
+Best length:  75
+Generation:  451
+Current best score:  22979083264.0
+Best length:  76
+Generation:  452
+Current best score:  38135398400.0
+Best length:  89
+Generation:  453
+Current best score:  18597888000.0
+Best length:  69
+Generation:  454
+Current best score:  15622668288.0
+Best length:  63
+Generation:  455
+Current best score:  16388683776.0
+Best length:  66
+Generation:  456
+Current best score:  32635207680.0
+Best length:  83
+Generation:  457
+Current best score:  13950617600.0
+Best length:  62
+Generation:  458
+Current best score:  22229815296.0
+Best length:  76
+Generation:  459
+Current best score:  21627285504.0
+Best length:  70
+Generation:  460
+Current best score:  14717222912.0
+Best length:  65
+Generation:  461
+Current best score:  18016243712.0
+Best length:  71
+Generation:  462
+Current best score:  25564672000.0
+Best length:  79
+Generation:  463
+Current best score:  23605752832.0
+Best length:  80
+Generation:  464
+Current best score:  29467017216.0
+Best length:  81
+Generation:  465
+Current best score:  24537203712.0
+Best length:  78
+Generation:  466
+Current best score:  27960033280.0
+Best length:  77
+Generation:  467
+Current best score:  28424704000.0
+Best length:  79
+Generation:  468
+Current best score:  21519511552.0
+Best length:  71
+Generation:  469
+Current best score:  27263295488.0
+Best length:  83
+Generation:  470
+Current best score:  30336979968.0
+Best length:  80
+Generation:  471
+Current best score:  35426012160.0
+Best length:  86
+Generation:  472
+Current best score:  32855970816.0
+Best length:  82
+Generation:  473
+Current best score:  34363535360.0
+Best length:  86
+Generation:  474
+Current best score:  29147238400.0
+Best length:  79
+Generation:  475
+Current best score:  28123648000.0
+Best length:  79
+Generation:  476
+Current best score:  23065473024.0
+Best length:  75
+Generation:  477
+Current best score:  37461086208.0
+Best length:  87
+Generation:  478
+Current best score:  17980817408.0
+Best length:  71
+Generation:  479
+Current best score:  32270725120.0
+Best length:  83
+Generation:  480
+Current best score:  24067763200.0
+Best length:  74
+Generation:  481
+Current best score:  27426201600.0
+Best length:  79
+Generation:  482
+Current best score:  32193101824.0
+Best length:  77
+Generation:  483
+Current best score:  47940157440.0
+Best length:  93
+Generation:  484
+Current best score:  29640949760.0
+Best length:  77
+Generation:  485
+Current best score:  38119680000.0
+Best length:  84
+Generation:  486
+Current best score:  37285789696.0
+Best length:  85
+Generation:  487
+Current best score:  19017227264.0
+Best length:  70
+Generation:  488
+Current best score:  24960172032.0
+Best length:  81
+Generation:  489
+Current best score:  23854989312.0
+Best length:  75
+Generation:  490
+Current best score:  25768624128.0
+Best length:  80
+Generation:  491
+Current best score:  48157949952.0
+Best length:  90
+Generation:  492
+Current best score:  22510259200.0
+Best length:  74
+Generation:  493
+Current best score:  36622057472.0
+Best length:  86
+Generation:  494
+Current best score:  32883840000.0
+Best length:  84
+Generation:  495
+Current best score:  26783948800.0
+Best length:  79
+Generation:  496
+Current best score:  48937291776.0
+Best length:  90
+Generation:  497
+Current best score:  25425100800.0
+Best length:  75
+Generation:  498
+Current best score:  27406041088.0
+Best length:  77
+Generation:  499
+Current best score:  31938969600.0
+Best length:  85
+Generation:  500
+Current best score:  25349271552.0
+Best length:  75
+Generation:  501
+Current best score:  15532314624.0
+Best length:  67
+Generation:  502
+Current best score:  39633420288.0
+Best length:  97
+Generation:  503
+Current best score:  37077404672.0
+Best length:  86
+Generation:  504
+Current best score:  26160742400.0
+Best length:  77
+Generation:  505
+Current best score:  47499837440.0
+Best length:  97
+Generation:  506
+Current best score:  49961395200.0
+Best length:  94
+Generation:  507
+Current best score:  23251833856.0
+Best length:  82
+Generation:  508
+Current best score:  19453132800.0
+Best length:  69
+Generation:  509
+Current best score:  20290816000.0
+Best length:  74
+Generation:  510
+Current best score:  45016678400.0
+Best length:  89
+Generation:  511
+Current best score:  27143726080.0
+Best length:  76
+Generation:  512
+Current best score:  21160820736.0
+Best length:  75
+Generation:  513
+Current best score:  52846166016.0
+Best length:  93
+Generation:  514
+Current best score:  35360686080.0
+Best length:  82
+Generation:  515
+Current best score:  34583040000.0
+Best length:  84
+Generation:  516
+Current best score:  29508059136.0
+Best length:  85
+Generation:  517
+Current best score:  23821664256.0
+Best length:  77
+Generation:  518
+Current best score:  37087285248.0
+Best length:  87
+Generation:  519
+Current best score:  33305247744.0
+Best length:  85
+Generation:  520
+Current best score:  26539540480.0
+Best length:  77
+Generation:  521
+Current best score:  37723521024.0
+Best length:  93
+Generation:  522
+Current best score:  31314841600.0
+Best length:  88
+Generation:  523
+Current best score:  44403789824.0
+Best length:  91
+Generation:  524
+Current best score:  26006601728.0
+Best length:  85
+Generation:  525
+Current best score:  43963125760.0
+Best length:  91
+Generation:  526
+Current best score:  30584755200.0
+Best length:  80
+Generation:  527
+Current best score:  29871360000.0
+Best length:  84
+Generation:  528
+Current best score:  42521158656.0
+Best length:  90
+Generation:  529
+Current best score:  42949341184.0
+Best length:  95
+Generation:  530
+Current best score:  27532800000.0
+Best length:  84
+Generation:  531
+Current best score:  52188313600.0
+Best length:  94
+Generation:  532
+Current best score:  24987856896.0
+Best length:  76
+Generation:  533
+Current best score:  32461377536.0
+Best length:  83
+Generation:  534
+Current best score:  37475592192.0
+Best length:  90
+Generation:  535
+Current best score:  53965090816.0
+Best length:  100
+Generation:  536
+Current best score:  30557184000.0
+Best length:  79
+Generation:  537
+Current best score:  28522119168.0
+Best length:  81
+Generation:  538
+Current best score:  47002419200.0
+Best length:  89
+Generation:  539
+Current best score:  40127732736.0
+Best length:  88
+Generation:  540
+Current best score:  27275923456.0
+Best length:  80
+Generation:  541
+Current best score:  34106572800.0
+Best length:  81
+Generation:  542
+Current best score:  30940932096.0
+Best length:  80
+Generation:  543
+Current best score:  39909482496.0
+Best length:  87
+Generation:  544
+Current best score:  27579152384.0
+Best length:  82
+Generation:  545
+Current best score:  35180900352.0
+Best length:  87
+Generation:  546
+Current best score:  49339564032.0
+Best length:  97
+Generation:  547
+Current best score:  57158402048.0
+Best length:  97
+Generation:  548
+Current best score:  32135660544.0
+Best length:  82
+Generation:  549
+Current best score:  28341633024.0
+Best length:  81
+Generation:  550
+Current best score:  40606396416.0
+Best length:  90
+Generation:  551
+Current best score:  55132028928.0
+Best length:  105
+Generation:  552
+Current best score:  56036966400.0
+Best length:  99
+Generation:  553
+Current best score:  32069091328.0
+Best length:  85
+Generation:  554
+Current best score:  39669848064.0
+Best length:  86
+Generation:  555
+Current best score:  36728627200.0
+Best length:  83
+Generation:  556
+Current best score:  34362074112.0
+Best length:  82
+Generation:  557
+Current best score:  33044549632.0
+Best length:  83
+Generation:  558
+Current best score:  24441946112.0
+Best length:  77
+Generation:  559
+Current best score:  30368622592.0
+Best length:  86
+Generation:  560
+Current best score:  33321547776.0
+Best length:  88
+Generation:  561
+Current best score:  29536855040.0
+Best length:  86
+Generation:  562
+Current best score:  29495050240.0
+Best length:  83
+Generation:  563
+Current best score:  33525135360.0
+Best length:  90
+Generation:  564
+Current best score:  33874560000.0
+Best length:  84
+Generation:  565
+Current best score:  30067200000.0
+Best length:  84
+Generation:  566
+Current best score:  35194082304.0
+Best length:  92
+Generation:  567
+Current best score:  24939118592.0
+Best length:  77
+Generation:  568
+Current best score:  27763200000.0
+Best length:  84
+Generation:  569
+Current best score:  45042794496.0
+Best length:  93
+Generation:  570
+Current best score:  31187460096.0
+Best length:  87
+Generation:  571
+Current best score:  48363340800.0
+Best length:  94
+Generation:  572
+Current best score:  51748973568.0
+Best length:  102
+Generation:  573
+Current best score:  29362065408.0
+Best length:  87
+Generation:  574
+Current best score:  24517833728.0
+Best length:  82
+Generation:  575
+Current best score:  38427283456.0
+Best length:  91
+Generation:  576
+Current best score:  51775543296.0
+Best length:  102
+Generation:  577
+Current best score:  29670423552.0
+Best length:  86
+Generation:  578
+Current best score:  32572212224.0
+Best length:  82
+Generation:  579
+Current best score:  46863360000.0
+Best length:  99
+Generation:  580
+Current best score:  19777994752.0
+Best length:  77
+Generation:  581
+Current best score:  38249164800.0
+Best length:  86
+Generation:  582
+Current best score:  32536346624.0
+Best length:  85
+Generation:  583
+Current best score:  31115392000.0
+Best length:  86
+Generation:  584
+Current best score:  20407855104.0
+Best length:  78
+Generation:  585
+Current best score:  25076432896.0
+Best length:  77
+Generation:  586
+Current best score:  24813657088.0
+Best length:  80
+Generation:  587
+Current best score:  39391412224.0
+Best length:  92
+Generation:  588
+Current best score:  61789437952.0
+Best length:  97
+Generation:  589
+Current best score:  30060877824.0
+Best length:  78
+Generation:  590
+Current best score:  22162950144.0
+Best length:  78
+Generation:  591
+Current best score:  26394144768.0
+Best length:  83
+Generation:  592
+Current best score:  19939942400.0
+Best length:  79
+Generation:  593
+Current best score:  45557022720.0
+Best length:  97
+Generation:  594
+Current best score:  40873771008.0
+Best length:  93
+Generation:  595
+Current best score:  29573120000.0
+Best length:  85
+Generation:  596
+Current best score:  17327398912.0
+Best length:  71
+Generation:  597
+Current best score:  19896369152.0
+Best length:  77
+Generation:  598
+Current best score:  33087614976.0
+Best length:  87
+Generation:  599
+Current best score:  44748960768.0
+Best length:  98
+Generation:  600
+Current best score:  35023352832.0
+Best length:  90
+Generation:  601
+Current best score:  35783299072.0
+Best length:  91
+Generation:  602
+Current best score:  22762607616.0
+Best length:  78
+Generation:  603
+Current best score:  50878464000.0
+Best length:  100
+Generation:  604
+Current best score:  25488000000.0
+Best length:  84
+Generation:  605
+Current best score:  44200857600.0
+Best length:  99
+Generation:  606
+Current best score:  30927181824.0
+Best length:  86
+Generation:  607
+Current best score:  17842073600.0
+Best length:  74
+Generation:  608
+Current best score:  23407104000.0
+Best length:  79
+Generation:  609
+Current best score:  53651340288.0
+Best length:  100
+Generation:  610
+Current best score:  20025241600.0
+Best length:  79
+Generation:  611
+Current best score:  28414057472.0
+Best length:  82
+Generation:  612
+Current best score:  50735218688.0
+Best length:  97
+Generation:  613
+Current best score:  21354741760.0
+Best length:  77
+Generation:  614
+Current best score:  26904420352.0
+Best length:  83
+Generation:  615
+Current best score:  23468507136.0
+Best length:  81
+Generation:  616
+Current best score:  36019439616.0
+Best length:  92
+Generation:  617
+Current best score:  23246540800.0
+Best length:  79
+Generation:  618
+Current best score:  30035148800.0
+Best length:  89
+Generation:  619
+Current best score:  28414668800.0
+Best length:  79
+Generation:  620
+Current best score:  18854451200.0
+Best length:  74
+Generation:  621
+Current best score:  26745458688.0
+Best length:  87
+Generation:  622
+Current best score:  37656045568.0
+Best length:  92
+Generation:  623
+Current best score:  41063289856.0
+Best length:  92
+Generation:  624
+Current best score:  72807841792.0
+Best length:  115
+Generation:  625
+Current best score:  27751415808.0
+Best length:  85
+Generation:  626
+Current best score:  36781307904.0
+Best length:  92
+Generation:  627
+Current best score:  38894026752.0
+Best length:  93
+Generation:  628
+Current best score:  21806972928.0
+Best length:  81
+Generation:  629
+Current best score:  27703323648.0
+Best length:  86
+Generation:  630
+Current best score:  34962332672.0
+Best length:  82
+Generation:  631
+Current best score:  16078196736.0
+Best length:  72
+Generation:  632
+Current best score:  30763859968.0
+Best length:  91
+Generation:  633
+Current best score:  28982034432.0
+Best length:  87
+Generation:  634
+Current best score:  45336195072.0
+Best length:  90
+Generation:  635
+Current best score:  27018002432.0
+Best length:  85
+Generation:  636
+Current best score:  27291332608.0
+Best length:  83
+Generation:  637
+Current best score:  38599417856.0
+Best length:  91
+Generation:  638
+Current best score:  43637739520.0
+Best length:  98
+Generation:  639
+Current best score:  37289220096.0
+Best length:  92
+Generation:  640
+Current best score:  26905624576.0
+Best length:  85
+Generation:  641
+Current best score:  24848695296.0
+Best length:  81
+Generation:  642
+Current best score:  35928502272.0
+Best length:  87
+Generation:  643
+Current best score:  15123096576.0
+Best length:  70
+Generation:  644
+Current best score:  33592480768.0
+Best length:  86
+Generation:  645
+Current best score:  19150002176.0
+Best length:  76
+Generation:  646
+Current best score:  39866327040.0
+Best length:  91
+Generation:  647
+Current best score:  25180157952.0
+Best length:  80
+Generation:  648
+Current best score:  27384709120.0
+Best length:  85
+Generation:  649
+Current best score:  31394671616.0
+Best length:  86
+Generation:  650
+Current best score:  47468134400.0
+Best length:  94
+Generation:  651
+Current best score:  12335599616.0
+Best length:  67
+Generation:  652
+Current best score:  48139506688.0
+Best length:  100
+Generation:  653
+Current best score:  24158601216.0
+Best length:  81
+Generation:  654
+Current best score:  54202523648.0
+Best length:  100
+Generation:  655
+Current best score:  37239839744.0
+Best length:  92
+Generation:  656
+Current best score:  15740863488.0
+Best length:  72
+Generation:  657
+Current best score:  22275948544.0
+Best length:  73
+Generation:  658
+Current best score:  36285931520.0
+Best length:  91
+Generation:  659
+Current best score:  34130808832.0
+Best length:  91
+Generation:  660
+Current best score:  31845276672.0
+Best length:  88
+Generation:  661
+Current best score:  29117935616.0
+Best length:  86
+Generation:  662
+Current best score:  34976323584.0
+Best length:  90
+Generation:  663
+Current best score:  39871107072.0
+Best length:  92
+Generation:  664
+Current best score:  16610516992.0
+Best length:  67
+Generation:  665
+Current best score:  25488000000.0
+Best length:  84
+Generation:  666
+Current best score:  21353201664.0
+Best length:  73
+Generation:  667
+Current best score:  52297498624.0
+Best length:  101
+Generation:  668
+Current best score:  32110493696.0
+Best length:  85
+Generation:  669
+Current best score:  30155776000.0
+Best length:  79
+Generation:  670
+Current best score:  21428699136.0
+Best length:  73
+Generation:  671
+Current best score:  27682833408.0
+Best length:  82
+Generation:  672
+Current best score:  36025139200.0
+Best length:  89
+Generation:  673
+Current best score:  24425938944.0
+Best length:  83
+Generation:  674
+Current best score:  47153664000.0
+Best length:  99
+Generation:  675
+Current best score:  42380587008.0
+Best length:  96
+Generation:  676
+Current best score:  37380706304.0
+Best length:  91
+Generation:  677
+Current best score:  49100857344.0
+Best length:  102
+Generation:  678
+Current best score:  27255603200.0
+Best length:  79
+Generation:  679
+Current best score:  33746844672.0
+Best length:  90
+Generation:  680
+Current best score:  29319837696.0
+Best length:  78
+Generation:  681
+Current best score:  31595692032.0
+Best length:  81
+Generation:  682
+Current best score:  17012519936.0
+Best length:  76
+Generation:  683
+Current best score:  24882131968.0
+Best length:  76
+Generation:  684
+Current best score:  30465763328.0
+Best length:  86
+Generation:  685
+Current best score:  33667200000.0
+Best length:  84
+Generation:  686
+Current best score:  73540454400.0
+Best length:  114
+Generation:  687
+Current best score:  24620118016.0
+Best length:  76
+Generation:  688
+Current best score:  26911539200.0
+Best length:  85
+Generation:  689
+Current best score:  36690296832.0
+Best length:  93
+Generation:  690
+Current best score:  31881600000.0
+Best length:  84
+Generation:  691
+Current best score:  16428183552.0
+Best length:  75
+Generation:  692
+Current best score:  25838402560.0
+Best length:  82
+Generation:  693
+Current best score:  19579125760.0
+Best length:  77
+Generation:  694
+Current best score:  26553600000.0
+Best length:  84
+Generation:  695
+Current best score:  25515687936.0
+Best length:  85
+Generation:  696
+Current best score:  27061428224.0
+Best length:  83
+Generation:  697
+Current best score:  35529781248.0
+Best length:  87
+Generation:  698
+Current best score:  19769131008.0
+Best length:  75
+Generation:  699
+Current best score:  29203200000.0
+Best length:  84
+Generation:  700
+Current best score:  28457676800.0
+Best length:  83
+Generation:  701
+Current best score:  22778413056.0
+Best length:  81
+Generation:  702
+Current best score:  15228518400.0
+Best length:  69
+Generation:  703
+Current best score:  31033647104.0
+Best length:  88
+Generation:  704
+Current best score:  42684268544.0
+Best length:  95
+Generation:  705
+Current best score:  33517486080.0
+Best length:  87
+Generation:  706
+Current best score:  29808000000.0
+Best length:  84
+Generation:  707
+Current best score:  44524630016.0
+Best length:  95
+Generation:  708
+Current best score:  33410252800.0
+Best length:  89
+Generation:  709
+Current best score:  30458880000.0
+Best length:  84
+Generation:  710
+Current best score:  49940582400.0
+Best length:  99
+Generation:  711
+Current best score:  44051405824.0
+Best length:  98
+Generation:  712
+Current best score:  33572164608.0
+Best length:  90
+Generation:  713
+Current best score:  34902420480.0
+Best length:  90
+Generation:  714
+Current best score:  32184262656.0
+Best length:  87
+Generation:  715
+Current best score:  35753902080.0
+Best length:  85
+Generation:  716
+Current best score:  37509184512.0
+Best length:  90
+Generation:  717
+Current best score:  33545290752.0
+Best length:  90
+Generation:  718
+Current best score:  57283293184.0
+Best length:  103
+Generation:  719
+Current best score:  56673229824.0
+Best length:  102
+Generation:  720
+Current best score:  36489142272.0
+Best length:  95
+Generation:  721
+Current best score:  113303743488.0
+Best length:  126
+Generation:  722
+Current best score:  40870477824.0
+Best length:  97
+Generation:  723
+Current best score:  27044605952.0
+Best length:  83
+Generation:  724
+Current best score:  43027398656.0
+Best length:  97
+Generation:  725
+Current best score:  26613281792.0
+Best length:  82
+Generation:  726
+Current best score:  47391899648.0
+Best length:  101
+Generation:  727
+Current best score:  28316524544.0
+Best length:  86
+Generation:  728
+Current best score:  25422004224.0
+Best length:  81
+Generation:  729
+Current best score:  38508672000.0
+Best length:  94
+Generation:  730
+Current best score:  88444166144.0
+Best length:  116
+Generation:  731
+Current best score:  30084747264.0
+Best length:  87
+Generation:  732
+Current best score:  17866469376.0
+Best length:  72
+Generation:  733
+Current best score:  43258444800.0
+Best length:  94
+Generation:  734
+Current best score:  40888221696.0
+Best length:  93
+Generation:  735
+Current best score:  36336884736.0
+Best length:  92
+Generation:  736
+Current best score:  21083955200.0
+Best length:  79
+Generation:  737
+Current best score:  104315987968.0
+Best length:  122
+Generation:  738
+Current best score:  44653379584.0
+Best length:  95
+Generation:  739
+Current best score:  49054089216.0
+Best length:  97
+Generation:  740
+Current best score:  44367544320.0
+Best length:  97
+Generation:  741
+Current best score:  45707689984.0
+Best length:  97
+Generation:  742
+Current best score:  25592842240.0
+Best length:  82
+Generation:  743
+Current best score:  40439654400.0
+Best length:  94
+Generation:  744
+Current best score:  52406386688.0
+Best length:  103
+Generation:  745
+Current best score:  39714611200.0
+Best length:  94
+Generation:  746
+Current best score:  27999830016.0
+Best length:  85
+Generation:  747
+Current best score:  29075484672.0
+Best length:  87
+Generation:  748
+Current best score:  37676777472.0
+Best length:  91
+Generation:  749
+Current best score:  52158824448.0
+Best length:  101
+Generation:  750
+Current best score:  63852187648.0
+Best length:  103
+Generation:  751
+Current best score:  29295132672.0
+Best length:  85
+Generation:  752
+Current best score:  40566933504.0
+Best length:  96
+Generation:  753
+Current best score:  51491454976.0
+Best length:  101
+Generation:  754
+Current best score:  60671104000.0
+Best length:  104
+Generation:  755
+Current best score:  55116902400.0
+Best length:  104
+Generation:  756
+Current best score:  67981234176.0
+Best length:  111
+Generation:  757
+Current best score:  26276659200.0
+Best length:  81
+Generation:  758
+Current best score:  38978049024.0
+Best length:  96
+Generation:  759
+Current best score:  22929532928.0
+Best length:  80
+Generation:  760
+Current best score:  52758623232.0
+Best length:  102
+Generation:  761
+Current best score:  62324951040.0
+Best length:  108
+Generation:  762
+Current best score:  44161368064.0
+Best length:  97
+Generation:  763
+Current best score:  58341916672.0
+Best length:  103
+Generation:  764
+Current best score:  55680640000.0
+Best length:  104
+Generation:  765
+Current best score:  91803615232.0
+Best length:  121
+Generation:  766
+Current best score:  54069396480.0
+Best length:  102
+Generation:  767
+Current best score:  43475647488.0
+Best length:  100
+Generation:  768
+Current best score:  48024576000.0
+Best length:  99
+Generation:  769
+Current best score:  53869286400.0
+Best length:  104
+Generation:  770
+Current best score:  54758965248.0
+Best length:  101
+Generation:  771
+Current best score:  52028817408.0
+Best length:  101
+Generation:  772
+Current best score:  53201452032.0
+Best length:  102
+Generation:  773
+Current best score:  54710272000.0
+Best length:  104
+Generation:  774
+Current best score:  57102331904.0
+Best length:  103
+Generation:  775
+Current best score:  50412928000.0
+Best length:  104
+Generation:  776
+Current best score:  60719155200.0
+Best length:  108
+Generation:  777
+Current best score:  47004364800.0
+Best length:  99
+Generation:  778
+Current best score:  69922372608.0
+Best length:  108
+Generation:  779
+Current best score:  105467727872.0
+Best length:  127
+Generation:  780
+Current best score:  51751877632.0
+Best length:  100
+Generation:  781
+Current best score:  44464041984.0
+Best length:  95
+Generation:  782
+Current best score:  70176153600.0
+Best length:  114
+Generation:  783
+Current best score:  59680751616.0
+Best length:  105
+Generation:  784
+Current best score:  53823078400.0
+Best length:  104
+Generation:  785
+Current best score:  51323857920.0
+Best length:  102
+Generation:  786
+Current best score:  47187836928.0
+Best length:  102
+Generation:  787
+Current best score:  60014950400.0
+Best length:  104
+Generation:  788
+Current best score:  67926556672.0
+Best length:  113
+Generation:  789
+Current best score:  49686746112.0
+Best length:  106
+Generation:  790
+Current best score:  38353305600.0
+Best length:  94
+Generation:  791
+Current best score:  82582016000.0
+Best length:  119
+Generation:  792
+Current best score:  41300066304.0
+Best length:  93
+Generation:  793
+Current best score:  50256400384.0
+Best length:  98
+Generation:  794
+Current best score:  103761727488.0
+Best length:  123
+Generation:  795
+Current best score:  57147572224.0
+Best length:  103
+Generation:  796
+Current best score:  73743667200.0
+Best length:  114
+Generation:  797
+Current best score:  97759862784.0
+Best length:  123
+Generation:  798
+Current best score:  90272948224.0
+Best length:  122
+Generation:  799
+Current best score:  78956761088.0
+Best length:  112
+Generation:  800
+Current best score:  48188068864.0
+Best length:  98
