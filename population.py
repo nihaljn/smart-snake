@@ -168,11 +168,13 @@ class Snake:
 
 if __name__ == '__main__':
     population = Population(100)
-    loadfile = 'poprp1.1'
-    savefile = 'poprp1.2'
+    loadfile = 'poprp1.2'
+    savefile = 'poprp1.3'
     population.load(loadfile)
+    population.globalBest.play()
+    exit()
     try:
-        for i in range(500):
+        for i in range(10):
             print('Generation: ', i+1)
             population.natural_selection()
     except BaseException as e:	# BaseException can catch even Keyboard interrupt (Ctrl + C)
