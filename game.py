@@ -159,6 +159,8 @@ class Game(object):
         mrk = 0
         cnt_moves = 0
         lifetime = 0
+        movesBtwn = 0
+
         while flag:
             lifetime += 1
             # pause the game for 50ms amount of time
@@ -212,9 +214,9 @@ class Game(object):
                     if prevMove == 0:
                         prevMove = currentMove
                     if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
-                        return len(self.player.body), lifetime
+                        return len(self.player.body), lifetime, movesBtwn
                     if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
-                        return len(self.player.body), lifetime
+                        return len(self.player.body), lifetime, movesBtwn
                     break
 
             self.player.move(currentMove)
@@ -222,14 +224,15 @@ class Game(object):
             if self.player.body[0].pos == self.snack.pos:
                 self.player.add_cube()
                 self.snack = cube.Cube(self.random_snack(), color = (128,0,128))
+                movesBtwn += cnt_moves
                 cnt_moves = 0
 
             # Exit if hits the wall
             if self.hits_wall(self.player.body[0].pos):
-                return len(self.player.body), lifetime
+                return len(self.player.body), lifetime, movesBtwn
             
             if (len(self.player.body) > 1 and self.player.body[0].pos in list(map(lambda z:z.pos,self.player.body[1:]))) or cnt_moves > 300:
-                return len(self.player.body), lifetime
+                return len(self.player.body), lifetime, movesBtwn
 
             self.redraw_window()
             cnt_moves += 1

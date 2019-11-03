@@ -32,8 +32,10 @@ class Population:
         fitness = []
         # Total length of all snakes (for calculating average)
         totlen = 0
+
         for i, snake in enumerate(self.snakes):
             snake.train()
+            # snake.play()
             fitness.append((snake.score, i))
             totlen += snake.len
         fitness.sort(reverse=True)
@@ -113,13 +115,14 @@ class Snake:
         '''
         g = Game()
         # Play the game and return the score
-        score, time = g.play(self.brain)
+        score, time, moves = g.play(self.brain)
         self.len = score
         if score < 10:
             self.score = math.pow(2, score) * time
         else:
             score -= 9
-            self.score = math.pow(2, 10) * time * score * score
+            self.score = math.pow(2, 10) * time * score * score - moves * moves
+            print(moves, time, score)
         return self.score
 
     def train(self):
@@ -129,13 +132,14 @@ class Snake:
         '''
         g = GameSim()
         # Play the game and return the score
-        score, time = g.play(self.brain)
+        score, time, moves = g.play(self.brain)
         self.len = score
         if score < 10:
             self.score = math.pow(2, score) * time
         else:
             score -= 9
-            self.score = math.pow(2, 10) * time * score * score
+            self.score = math.pow(2, 10) * time * score * score - moves * moves
+            # print(moves, time, score)
         return self.score
     
     def clone(self):
@@ -164,21 +168,74 @@ class Snake:
         snake = Snake(b)
         return snake
 
+def get_best_player(snakes):
+    '''
+    Finds the best snake player in a population.
 
+    Agruments:
+        snakes: a list of Snake objects belonging to the population
+
+    Returns:
+        bestSnake: the best player in the population
+        bestScore: the score of bestSnake
+        bestSeed: the seed value used to obtain bestScore
+    '''
+    seed = np.random.randint(1, 2**32 - 1)
+    bestScore = 0
+    bestSeed = seed
+    bestSnake = None
+
+    for snake in snakes:
+
+        np.random.seed(seed)
+        g = GameSim()
+        # g = Game()
+        score, time, moves = g.play(snake.brain)
+
+        if score > bestScore:
+            bestScore = score
+            bestSeed = seed
+            bestSnake = snake
+
+        seed = np.random.randint(1, 2**32 - 1)
+
+    return bestSnake, bestScore, bestSeed
+
+def gameplay(snake, seed):
+
+    '''
+    Simulates the gameplay of player snake using seed.
+    Arguments:
+        snake: Snake object whose gameplay has to be simulated
+        seed: value to be used to simulate the gameplay
+
+    Returns:
+        score: score of player in the simulated game
+    '''
+
+    np.random.seed(seed)
+    g = GameSim()
+    # g = Game()
+    score, time, moves = g.play(snake.brain)
+    return score
 
 if __name__ == '__main__':
+
     population = Population(100)
-    loadfile = 'poprp1.2'
-    savefile = 'poprp1.3'
+    loadfile = 'poprp1_save.3'
+    savefile = 'poprp1_save.3'
     population.load(loadfile)
-    population.globalBest.play()
-    exit()
-    try:
-        for i in range(10):
-            print('Generation: ', i+1)
-            population.natural_selection()
-    except BaseException as e:	# BaseException can catch even Keyboard interrupt (Ctrl + C)
-        print(e)
-        population.save('tmp')
-        exit()
-    population.save(savefile)
+    # # population.globalBest.play()
+    # # exit()
+    # try:
+    #     for i in range(1):
+    #         print('Generation: ', i+1)
+    #         population.natural_selection()
+    # except BaseException as e:	# BaseException can catch even Keyboard interrupt (Ctrl + C)
+    #     print(e)
+    #     population.save('tmp')
+    #     exit()
+    # population.save(savefile)
+    snake, score, seed = get_best_player(population.snakes)
+    print(snake, score, seed)
+    print(gameplay(snake, seed))

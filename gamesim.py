@@ -87,6 +87,7 @@ class GameSim:
         prevMove = 0
         cnt_moves = 0
         lifetime = 0
+        movesBtwn = 0
         self.len = 3
         while flag:
             lifetime += 1
@@ -111,9 +112,9 @@ class GameSim:
                     if prevMove == 0:
                         prevMove = currentMove
                     if prevMove == 273 and currentMove == 274 or prevMove == 274 and currentMove == 273:
-                        return self.len, lifetime
+                        return self.len, lifetime, movesBtwn
                     if prevMove == 275 and currentMove == 276 or prevMove == 276 and currentMove == 275:
-                        return self.len, lifetime
+                        return self.len, lifetime, movesBtwn
                     break
 
             self.player.move(currentMove)
@@ -122,14 +123,15 @@ class GameSim:
                 self.player.add_cube()
                 self.snack = Cube(self.random_snack())
                 self.len += 1
+                movesBtwn += cnt_moves
                 cnt_moves = 0
 
             # Exit if hits the wall
             if self.hits_wall(self.player.body[0].pos):
-                return self.len, lifetime
+                return self.len, lifetime, movesBtwn
             
             if (self.len > 1 and self.player.body[0].pos in list(map(lambda z:z.pos,self.player.body[1:]))) or cnt_moves > 300:
-                return self.len, lifetime
+                return self.len, lifetime, movesBtwn
 
             cnt_moves += 1
 
