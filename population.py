@@ -8,10 +8,11 @@ from gamesim import GameSim
 
 nn_config = [8, 16]
 mutation_rate = 0.01
+gene_mixing_rate = 0.005
 
 class Population:
     
-    def __init__(self, population_size):
+    def __init__(self, population_size, env='env1'):
         '''
         Creates a population of snakes
         Attributes:
@@ -20,6 +21,7 @@ class Population:
         self.population_size = population_size
         self.snakes = []
         self.globalBest = None
+        self.env = env
         # Generate a random population
         for _ in range(population_size):
             self.snakes.append(Snake())
@@ -33,7 +35,7 @@ class Population:
         # Total length of all snakes (for calculating average)
         totlen = 0
         for i, snake in enumerate(self.snakes):
-            snake.train()
+            snake.train(self.env)
             fitness.append((snake.score, i))
             totlen += snake.len
         fitness.sort(reverse=True)
@@ -87,7 +89,7 @@ class Population:
         with open(filename, 'wb') as f:
             pickle.dump(self.__dict__, f)
     
-    def load(self, name):
+    def load(self, name, env='env1'):
         '''
         Loads the population from saved file
         '''
@@ -95,6 +97,21 @@ class Population:
         with open(filename, 'rb') as f:
             tmp_dict = pickle.load(f)
         self.__dict__.update(tmp_dict)
+        self.env = env
+    
+    def mix(self, pop2):
+        '''
+        Perform gene pool mixing between the two populations
+        '''
+        if self.population_size != pop2.population_size:
+            raise ValueError('Population size inconsistent for mixing')
+        n = self.population_size
+        k = np.random.randint(0, n / 2)
+        for i in range(k):
+            chance = float(np.random.random(1))
+            if chance <= gene_mixing_rate:
+                pop2.snakes[n-i-1] = self.snakes[i]
+                self.snakes[n-i-1] = pop2.snakes[i]
 
 class Snake:
 
@@ -107,14 +124,34 @@ class Snake:
         # Initialize the brain
         self.brain = brain if brain else Brain(nn_config)
 
-    def play(self):
+    def play(self, env):
         '''
         Plays the game and return the score achieved
         '''
+        fitness = self.fitness1
+        if env == 'env2':
+            fitness = self.fitness2
         g = Game()
         # Play the game and return the score
         score, time = g.play(self.brain)
         self.len = score
+        return fitness(score, time)
+
+    def train(self, env):
+        '''
+        Plays snake without pygame for superfast training time.
+        Note: High CPU usage. Don't provide very large number of generations to train in one go.
+        '''
+        fitness = self.fitness1
+        if env == 'env2':
+            fitness = self.fitness2
+        g = GameSim()
+        # Play the game and return the score
+        score, time = g.play(self.brain)
+        self.len = score
+        return fitness(score, time)
+    
+    def fitness1(self, score, time):
         if score < 10:
             self.score = math.pow(2, score) * time
         else:
@@ -122,22 +159,14 @@ class Snake:
             self.score = math.pow(2, 10) * time * score * score
         return self.score
 
-    def train(self):
-        '''
-        Plays snake without pygame for superfast training time.
-        Note: High CPU usage. Don't provide very large number of generations to train in one go.
-        '''
-        g = GameSim()
-        # Play the game and return the score
-        score, time = g.play(self.brain)
-        self.len = score
+    def fitness2(self, score, time):
         if score < 10:
             self.score = math.pow(2, score) * time
         else:
             score -= 9
             self.score = math.pow(2, 10) * time * score * score
         return self.score
-    
+
     def clone(self):
         '''
         Generates clone of the snake
@@ -167,18 +196,24 @@ class Snake:
 
 
 if __name__ == '__main__':
-    population = Population(100)
-    loadfile = 'poprp1.2'
-    savefile = 'poprp1.3'
-    population.load(loadfile)
-    population.globalBest.play()
-    exit()
+    population1 = Population(100)
+    population2 = Population(100)
+    
+    population1.load('poprp1.2')
+    population2.load('poprp1.3', 'env2')
+
+    # population1.globalBest.play()
+    # exit()
     try:
-        for i in range(10):
+        for i in range(2):
             print('Generation: ', i+1)
-            population.natural_selection()
+            population1.natural_selection()
+            population2.natural_selection()
+            population1.mix(population2)
     except BaseException as e:	# BaseException can catch even Keyboard interrupt (Ctrl + C)
         print(e)
-        population.save('tmp')
+        population1.save('tmp')
+        population2.save('tmp2')
         exit()
-    population.save(savefile)
+    population1.save('m1')
+    population2.save('m2')
