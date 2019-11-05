@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-'''
-x = np.arange(1, 1001)
+
+x = np.arange(1, 201)
 y = []
-with open('plotdata.txt') as f:
-    for i in range(1000):
+with open('progress.txt') as f:
+    for i in range(200):
         f.readline()
         f.readline()
         line = f.readline()
@@ -14,11 +14,14 @@ with open('plotdata.txt') as f:
         y.append(snake_len)
 
 plt.scatter(x, y)
+plt.title('Genetic Algorithm without Gene mixing')
 plt.xlabel('Number of generations')
 plt.ylabel('Length of best snake')
+plt.legend()
 plt.show()
-'''
 
+
+'''
 x = np.arange(1, 101)
 y1 = []
 y2 = []
@@ -44,3 +47,4 @@ plt.xlabel('Number of generations')
 plt.ylabel('Length of best snake')
 plt.legend()
 plt.show()
+'''
