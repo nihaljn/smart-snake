@@ -152,6 +152,7 @@ class Snake:
         return fitness(score, time)
     
     def fitness1(self, score, time):
+        # Optimize score (length of the snake)
         if score < 10:
             self.score = math.pow(2, score) * time
         else:
@@ -160,11 +161,8 @@ class Snake:
         return self.score
 
     def fitness2(self, score, time):
-        if score < 10:
-            self.score = math.pow(2, score) * time
-        else:
-            score -= 9
-            self.score = math.pow(2, 10) * time * score * score
+        # Optimize lifetime of the snake
+        self.score = time * time * time * score
         return self.score
 
     def clone(self):
@@ -199,13 +197,13 @@ if __name__ == '__main__':
     population1 = Population(100)
     population2 = Population(100)
     
-    population1.load('poprp1.2')
-    population2.load('poprp1.3', 'env2')
+    population1.load('poprp1.1')
+    population2.load('poprp1.1', 'env2')
 
     # population1.globalBest.play()
     # exit()
     try:
-        for i in range(2):
+        for i in range(100):
             print('Generation: ', i+1)
             population1.natural_selection()
             population2.natural_selection()
