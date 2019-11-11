@@ -165,7 +165,7 @@ class Game(object):
             lifetime += 1
             # pause the game for 50ms amount of time
             # to let the video display update
-            pygame.time.delay(50)
+            pygame.time.delay(10)
 
             # limit the frame rate to 10fps
             self.clock.tick(30)

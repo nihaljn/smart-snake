@@ -81,6 +81,16 @@ class Population:
         # Unreachable code
         assert(False)
 
+    def evolve(self, generations=10):
+        '''
+        Evolves the population using natural selection
+        Attributes:
+            generations: Number of iterations of natural selection
+        '''
+        for i in range(generations):
+            print('Generation: ', i + 1)
+            self.natural_selection()
+
     def save(self, name):
         '''
         Saves the entire population
@@ -97,6 +107,50 @@ class Population:
         with open(filename, 'rb') as f:
             tmp_dict = pickle.load(f)
         self.__dict__.update(tmp_dict)
+
+    def get_best_player(self):
+        '''
+        Finds the best snake player in the population.
+
+        Returns:
+            bestSnake: the best player in the population
+            bestScore: the score of bestSnake
+            bestSeed: the seed value used to obtain bestScore
+        '''
+        seed = np.random.randint(1, 2**32 - 1)
+        bestScore = 0
+        bestSeed = seed
+        bestSnake = None
+
+        for snake in self.snakes:
+
+            np.random.seed(seed)
+            g = GameSim()
+            # g = Game()
+            score, _, _ = g.play(snake.brain)
+
+            if score > bestScore:
+                bestScore = score
+                bestSeed = seed
+                bestSnake = snake
+
+            seed = np.random.randint(1, 2**32 - 1)
+
+        return bestSnake, bestScore, bestSeed
+    
+    def show_gameplay(self):
+        '''
+        Simulates the gameplay of player snake using seed.
+        Returns:
+            score: score of player in the simulated game
+        '''
+        snake, _, seed = self.get_best_player()
+        np.random.seed(seed)
+        # g = GameSim()
+        g = Game()
+        score, _, _ = g.play(snake.brain)
+        return score
+
 
 class Snake:
 
@@ -168,74 +222,20 @@ class Snake:
         snake = Snake(b)
         return snake
 
-def get_best_player(snakes):
-    '''
-    Finds the best snake player in a population.
-
-    Agruments:
-        snakes: a list of Snake objects belonging to the population
-
-    Returns:
-        bestSnake: the best player in the population
-        bestScore: the score of bestSnake
-        bestSeed: the seed value used to obtain bestScore
-    '''
-    seed = np.random.randint(1, 2**32 - 1)
-    bestScore = 0
-    bestSeed = seed
-    bestSnake = None
-
-    for snake in snakes:
-
-        np.random.seed(seed)
-        g = GameSim()
-        # g = Game()
-        score, time, moves = g.play(snake.brain)
-
-        if score > bestScore:
-            bestScore = score
-            bestSeed = seed
-            bestSnake = snake
-
-        seed = np.random.randint(1, 2**32 - 1)
-
-    return bestSnake, bestScore, bestSeed
-
-def gameplay(snake, seed):
-
-    '''
-    Simulates the gameplay of player snake using seed.
-    Arguments:
-        snake: Snake object whose gameplay has to be simulated
-        seed: value to be used to simulate the gameplay
-
-    Returns:
-        score: score of player in the simulated game
-    '''
-
-    np.random.seed(seed)
-    g = GameSim()
-    # g = Game()
-    score, time, moves = g.play(snake.brain)
-    return score
-
 if __name__ == '__main__':
 
     population = Population(100)
-    loadfile = 'poprp1_save.3'
-    savefile = 'poprp1_save.3'
+    loadfile = 'poprp1.1'
+    savefile = 'poprp1.1'
     population.load(loadfile)
-    # # population.globalBest.play()
-    # # exit()
-    # try:
-    #     for i in range(1):
-    #         print('Generation: ', i+1)
-    #         population.natural_selection()
-    # except BaseException as e:	# BaseException can catch even Keyboard interrupt (Ctrl + C)
-    #     print(e)
-    #     population.save('tmp')
-    #     exit()
-    # population.save(savefile)
-    snake, score, seed = get_best_player(population.snakes)
-    print(snake, score, seed)
-    print(gameplay(snake, seed))
+    no_of_generations = 1
+    try:
+        population.evolve(no_of_generations)
+        population.save(savefile)
+    except BaseException as e:
+        print(e)
+        # Dump progress in case of an exception
+        population.save('tmp')
+        exit()
+    # For displaying gameplay
+    population.show_gameplay()
