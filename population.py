@@ -212,7 +212,7 @@ class Snake:
             self.score = math.pow(2, score) * time
         else:
             score -= 9
-            self.score = math.pow(2, 10) * time * score * score - moves * moves
+            self.score = math.pow(2, 10) * time * score * score
             # print(moves, time, score)
         return self.score
 
@@ -251,8 +251,8 @@ if __name__ == '__main__':
 
     # Evolving single population
     population = Population(100)
-    loadfile = 'poprp1.1'
-    savefile = 'poprp1.1'
+    loadfile = 'saved_pop'
+    savefile = 'saved_pop'
     population.load(loadfile)
     no_of_generations = 1
     try:
@@ -271,11 +271,11 @@ if __name__ == '__main__':
     population2 = Population(100)
     
     # Initializing the two populations with different environments
-    population1.load('poprp1.1', 'env1')
-    population2.load('poprp1.1', 'env2')
+    population1.load('saved_pop', 'env1')
+    population2.load('saved_pop', 'env2')
 
     try:
-        for i in range(100):
+        for i in range(1):
             print('Generation: ', i+1)
             population1.natural_selection()
             population2.natural_selection()
