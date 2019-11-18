@@ -7,6 +7,11 @@ An AI agent that plays the classic Snake game. The AI agent is trained using gen
 2. Clone the repository locally.
 3. Move to the root directory and run: `python3 population.py`
 
+## Summary
+This project aims to implement an AI based agent which learns to play the classic snake game using Neuro Evolution (Training a Neural Network using Genetic Algorithm). 
+However, the major focus in the project is to use and test a variation of genetic algorithm using the concept of "gene pool mixing". Inspired from real life biological systems, in this kind of approach multiple populations are evolved over different environments and occasionally few individuals are migrated from one environment to another. 
+Hence, inducing genetic variability. This occasionally produces hybrid individuals possesing the best qualities of multiple populations. Results are faster evolution rates and better individuals (solutions).
+
 ## Introduction
 Genetic Algorithms (GA) are nothing but optimization algorithms. In this project we used Neuro Evolution to teach the snake to learn to play. What this means is that there is a neural network which takes certain inputs which is the percept for the snake and computes and output decision to move in any of the four directions. 
 
@@ -24,19 +29,23 @@ So by this the two populations evolve to adapt their own enviroments and hence, 
 
 However, we associate a probability of gene mixing which dictates the chances of mixing of the two populations. By mixing we refer to migration of certain individuals from one population to another. This type of strategy however didn't give significantly better results than the using single population, but had an advantage of faster improvement of the populations.
 
+##### Schematic representation of algorithm used:
+![Figure 1-1](plots/Genetic_Algorithm.png?raw=true)
+
+
 ## Results
-Using Genetic Algorithm without Gene mixing:
+
+##### Using Genetic Algorithm without Gene mixing:
 
 ![Figure 1-1](plots/gawgm.png?raw=true)
 
-Using Genetic Algorithm with Gene mixing:
+##### Using Genetic Algorithm with Gene mixing:
 
 ![Figure 2-2](plots/genemix.png?raw=true)
 
 Here red and blue points correspond to individuals from the two different populations.
+We can see the rate of improvement is faster for the latter case.
 
-We can see the rate of improvement is faster of the latter case.
-
-Finally, training plot for 1000 generations:
+##### Finally, training plot for 1000 generations:
 
 ![Figure 3-3](plots/genplot.png?raw=true)
