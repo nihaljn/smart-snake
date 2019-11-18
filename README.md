@@ -19,7 +19,7 @@ Now, since we cannot tell at any point of the game what is a good move, this lea
 
 Genetic Algorithm comes to rescue, in GA we let a population of snakes to play the gane and then define fitness of the snakes by how well they played (score and lifetime etc). Then we perform natural selection i.e. is choosing snake with higher fitness along with crossover and mutation to give new individuals for the next generation. By this process slowly good genes survive, by genes we mean parameters of the neural network which are the chromosomes in this case. Hence, the population slowly improves its performance dictated by the fitness function.
 
-## Gene Mixing
+## Gene pool mixing
 Along with the usual process of natural selection in genetic algorithm, in this project we used the concept of niche or environments to induce genetic variability.
 
 Similar to biological evolution where certain part of the species often split up and migrate to new environments and evolve differently. Here environment refers to using different fitness functions for the different populations.
@@ -27,7 +27,7 @@ Similar to biological evolution where certain part of the species often split up
 For example, one fitness function could be the score the snake achieves and the other could be the lifetime of the snake.
 So by this the two populations evolve to adapt their own enviroments and hence, will have different genes.
 
-However, we associate a probability of gene mixing which dictates the chances of mixing of the two populations. By mixing we refer to migration of certain individuals from one population to another. This type of strategy however didn't give significantly better results than the using single population, but had an advantage of faster improvement of the populations.
+However, we associate a probability of gene pool mixing which dictates the chances of mixing of the two populations. By mixing we refer to migration of certain individuals from one population to another. This type of strategy had a significant advantage in terms of faster evolution rates.
 
 ##### Schematic representation of algorithm used:
 ![Figure 1-1](plots/Genetic_Algorithm.png?raw=true)
@@ -35,11 +35,11 @@ However, we associate a probability of gene mixing which dictates the chances of
 
 ## Results
 
-##### Using Genetic Algorithm without Gene mixing:
+##### Using Genetic Algorithm without Gene pool mixing:
 
 ![Figure 1-1](plots/gawgm.png?raw=true)
 
-##### Using Genetic Algorithm with Gene mixing:
+##### Using Genetic Algorithm with Gene pool mixing:
 
 ![Figure 2-2](plots/genemix.png?raw=true)
 
